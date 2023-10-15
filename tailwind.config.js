@@ -5,7 +5,23 @@ module.exports = {
     `./src/components/**/*.{js,jsx,ts,tsx}`,
   ],
   theme: {
-    extend: {},
+		container: {
+			center: true,
+			padding: {
+				lg: "2rem",
+				DEFAULT: "15px",
+			},
+		},
+		fontFamily: {
+			sans: ["Montserrat", "sans-serif"],
+		},
+		extend: {
+			colors: {
+				primary: "#6A2978",
+				secundary: "#FFE66E",
+				complementary: "#BCA6F4",
+			},
+		},
   },
   plugins: [],
 }
