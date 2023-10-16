@@ -18,7 +18,7 @@ const Header = () => {
 
   return (
     <header>
-      <div className="flex justify-between items-center px-4 sm:px-8 py-4">
+      <div className="container flex justify-between items-center py-4">
         <div className="flex justify-between items-center gap-2 sm:gap-8 z-50">
           <a
             href="#"

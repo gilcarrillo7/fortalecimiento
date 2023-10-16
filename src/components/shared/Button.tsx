@@ -29,7 +29,7 @@ const Button = ({
 			{variant === "white" && (
 				<button
 					type={type}
-					className={`${className} text-white font-normal py-2 px-8 bg-white text-primary border-primary border hover:bg-primary hover:text-white sm:w-auto mx-auto sm:min-w-[220px]`}
+					className={`${className} text-primary font-normal py-2 px-8 bg-white text-primary border-primary border hover:bg-primary hover:text-white sm:w-auto mx-auto sm:min-w-[220px]`}
 					onClick={onClick}
 				>
 					{children}

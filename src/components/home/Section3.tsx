@@ -1,0 +1,30 @@
+import * as React from "react";
+import Imagen from "../../images/section3.svg";
+import Textura from "../../images/section3Textura.svg";
+import ImagenIcon from "../../images/section3Img.svg";
+
+const Section3 = () => {
+  return (
+    <div className="">
+      <div className="flex flex-col md:flex-row">
+        <div className="flex">
+          <div className="bg-complementary flex items-center justify-center w-1/2 md:w-[320px] md:h-[320px]">
+            <img src={ImagenIcon} className="" alt="" />
+          </div>
+          <img src={Textura} className="w-1/2 md:w-auto md:h-full" alt="" />
+        </div>
+        <div className="flex items-center jusitfy-center lg:pl-16 xl:pl-32">
+          <div className="p-4">
+            <p className="text-3xl font-thin mb-6 sm:max-w-[450px]">
+              “El verdadero poder es empoderar a alguien más”.
+            </p>
+            <p className="text-xl font-bold text-primary">Toni Morrison</p>
+          </div>
+        </div>
+      </div>
+      <img src={Imagen} className="w-full" alt="" />
+    </div>
+  );
+};
+
+export default Section3;

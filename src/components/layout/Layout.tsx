@@ -21,7 +21,7 @@ const Layout = ({ children }: IProps) => {
 					stiffness: 50,
 					duration: 0.5,
 				}}
-				className="flex flex-col overflow-hidden container"
+				className="flex flex-col overflow-hidden"
 			>
 				{children}
 			</motion.main>
