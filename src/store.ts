@@ -1,5 +1,5 @@
-import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
-import uiReducer from './features/ui/uiSlice';
+import { configureStore, ThunkAction, Action } from "@reduxjs/toolkit";
+import uiReducer from "./features/ui/uiSlice";
 
 export const store = configureStore({
   reducer: {
@@ -15,3 +15,5 @@ export type AppThunk<ReturnType = void> = ThunkAction<
   unknown,
   Action<string>
 >;
+
+export default store;
