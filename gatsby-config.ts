@@ -1,14 +1,4 @@
 import type { GatsbyConfig } from "gatsby";
-import path from "path";
-
-const gatsbyRequiredRules = path.join(
-  process.cwd(),
-  "node_modules",
-  "gatsby",
-  "dist",
-  "utils",
-  "eslint-rules"
-);
 
 const config: GatsbyConfig = {
   siteMetadata: {
@@ -20,21 +10,8 @@ const config: GatsbyConfig = {
   // Learn more at: https://gatsby.dev/graphql-typegen
   graphqlTypegen: true,
   plugins: [
-    "gatsby-plugin-sass",
-    "gatsby-plugin-postcss",
-    {
-      resolve: "gatsby-plugin-eslint",
-      options: {
-        // Gatsby required rules directory
-        rulePaths: [gatsbyRequiredRules],
-        // Default settings that may be omitted or customized
-        stages: ["develop"],
-        extensions: ["js", "jsx", "ts", "tsx"],
-        exclude: ["node_modules", "bower_components", ".cache", "public"],
-        // Any additional eslint-webpack-plugin options below
-        // ...
-      },
-    },
+		"gatsby-plugin-sass",
+		"gatsby-plugin-postcss",
   ],
 };
 
