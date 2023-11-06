@@ -3,3 +3,15 @@
 @tailwind utilities;
 
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+.carousel .control-dots .dot,
+.carousel .control-dots .dot:hover {
+  background-color: #6a2978 !important;
+  box-shadow: none !important;
+  opacity: 1 !important;
+  width: 18px !important;
+  height: 18px !important;
+}
+.carousel .control-dots .dot.selected {
+  background-color: #ffe66e !important;
+}

@@ -2,12 +2,18 @@ import * as React from "react";
 import Page from "../layout/Page";
 import MarkedText from "../shared/MarkedText";
 import Button from "../shared/Button";
+import ImageBg1 from "../../images/homeBg1.svg";
+import ImageBg2 from "../../images/homeBg2.svg";
+import ImageBg3 from "../../images/homeBg3.svg";
+import ImageBg4 from "../../images/homeBg4.svg";
 
 const Circle = ({ img = "", index }: { img?: string; index: number }) => {
-  const style = { backgroundImage: img };
+  const style = img !== "" ? { backgroundImage: `url(${img})` } : {};
   return (
     <div
-      className={`bg-secundary w-[97px] xl:w-[135px] h-[97px] xl:h-[135px] rounded-full ${
+      className={`${
+        img !== "" ? "bg-[size:97px] sm:bg-[size:135px]" : "bg-secundary"
+      } w-[97px] xl:w-[135px] h-[97px] xl:h-[135px] rounded-full ${
         index > 11 ? "hidden xl:flex" : ""
       }`}
       style={style}
@@ -19,19 +25,19 @@ const Section2 = () => {
   const images = [
     "",
     "",
+    ImageBg1,
     "",
     "",
     "",
     "",
     "",
     "",
+    ImageBg2,
+    "",
+    ImageBg3,
     "",
     "",
-    "",
-    "",
-    "",
-    "",
-    "",
+    ImageBg4,
     "",
   ];
   return (

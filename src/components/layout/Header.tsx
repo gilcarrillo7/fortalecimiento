@@ -31,13 +31,13 @@ const Header = () => {
             <img
               src={menuOpen ? LogoWhite : Logo}
               alt="Fortalecimiento Logo"
-              className="origin-left scale-75 sm:scale-100"
+              className="w-36"
             />
           </a>
           <img
             src={menuOpen ? LogoSideWhite : LogoSide}
             alt="Fortalecimiento Logo 20 años"
-            className="origin-left scale-75 sm:scale-100"
+            className="w-36"
           />
         </div>
         <HamburgerMenu />
