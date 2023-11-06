@@ -54,6 +54,8 @@ const Alliances = () => {
         showThumbs={false}
         showArrows={false}
         showStatus={false}
+        preventMovementUntilSwipeScrollTolerance={true}
+        swipeScrollTolerance={50}
         className="mb-20"
       >
         <div className="">

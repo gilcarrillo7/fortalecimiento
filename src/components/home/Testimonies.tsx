@@ -30,9 +30,15 @@ const Testimonies = () => {
   return (
     <Page className="bg-complementary">
       <div className="flex items-center justify-start sm:justify-center mb-8 sm:mb-16">
-        <img className="md:mr-6 scale-50 md:scale-100 origin-left" alt="" src={Textura} />
+        <img
+          className="md:mr-6 scale-50 md:scale-100 origin-left"
+          alt=""
+          src={Textura}
+        />
         <div className="relative -ml-16 sm:ml-0">
-          <h1 className="text-primary text-3xl sm:text-4xl sm:text-5xl">Testimonios</h1>
+          <h1 className="text-primary text-3xl sm:text-4xl sm:text-5xl">
+            Testimonios
+          </h1>
           <div className="absolute -right-32 top-1/2 -translate-y-1/2 bg-secundary w-[81px] h-[81px] rounded-full hidden sm:block"></div>
           <div className="absolute -bottom-12 right-0 bg-secundary w-[35px] h-[35px] rounded-full"></div>
         </div>
@@ -41,6 +47,8 @@ const Testimonies = () => {
         showThumbs={false}
         showArrows={false}
         showStatus={false}
+        preventMovementUntilSwipeScrollTolerance={true}
+        swipeScrollTolerance={50}
         className=""
       >
         {tests.map((test) => (
