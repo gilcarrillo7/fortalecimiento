@@ -46,6 +46,7 @@ const Alliances = () => {
         src={Textura}
       />
       <h1
+        id="alianzas"
         className={`text-primary text-3xl sm:text-5xl font-semibold text-center mb-12 mt-52 md:mt-[275px]`}
       >
         Nuestras alianzas

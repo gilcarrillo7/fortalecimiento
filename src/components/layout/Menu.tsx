@@ -13,7 +13,12 @@ const Option = ({ text, url }: { text: string; url: string }) => {
   };
 
   return (
-    <a className="flex" onClick={() => handleNav(url)}>
+    <a
+      role="button"
+      tabIndex={0}
+      className="flex cursor-pointer"
+      onClick={() => handleNav(url)}
+    >
       <div className="relative">
         {text}
         <div className="w-full h-[0.5px] opacity-60 bg-white absolute -bottom-1 " />
@@ -28,16 +33,16 @@ const Menu = () => {
       <div className="px-4 sm:px-8 flex flex-col w-screen">
         <div className="flex flex-col sm:flex-row text-2xl sm:text-4xl font-thin w-full gap-6 sm:gap-20 mb-16 sm:mb-24">
           <div className="flex flex-col gap-6 sm:gap-12 sm:w-1/2">
-            <Option text="Quienes somos" url="" />
+            <Option text="Quienes somos" url="/quienes_somos" />
             <Option text="Qué hacemos" url="" />
             <Option text="Modelo de intervención" url="" />
-            <Option text="Alianzas" url="" />
+            <Option text="Alianzas" url="/#alianzas" />
           </div>
           <div className="flex flex-col gap-6 sm:gap-12 sm:w-1/2">
             <Option text="Nuestra oferta" url="" />
             <Option text="Aula Virtual" url="" />
-            <Option text="Testimonios" url="" />
-            <Option text="Contacto" url="" />
+            <Option text="Testimonios" url="/#testimonios" />
+            <Option text="Contacto" url="/#contacto" />
           </div>
         </div>
         <Social />

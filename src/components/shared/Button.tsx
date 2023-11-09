@@ -1,7 +1,7 @@
 import * as React from "react";
 
 interface IProps {
-	variant: "primary" | "white" | "secondary" ;
+	variant: "primary" | "white" | "secondary"|"complementary" ;
 	className?: string;
 	onClick?: () => void;
 	children: React.ReactNode;
@@ -39,6 +39,15 @@ const Button = ({
 				<button
 					type={type}
 					className={`${className} text-white font-normal py-2 px-8 border bg-complementary text-white hover:bg-white hover:text-complementary hover:border-complementary sm:w-auto mx-auto sm:min-w-[220px]`}
+					onClick={onClick}
+				>
+					{children}
+				</button>
+			)}
+			{variant === "complementary" && (
+				<button
+					type={type}
+					className={`${className} text-primary font-normal py-2 px-8 bg-complementary border border-primary hover:bg-primary hover:text-white sm:w-auto mx-auto sm:min-w-[220px]`}
 					onClick={onClick}
 				>
 					{children}

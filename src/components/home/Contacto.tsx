@@ -6,7 +6,7 @@ import Button from "../shared/Button";
 
 const Contacto = () => {
   return (
-    <div className="relative">
+    <div id="contacto" className="relative">
       <div className="bg-primary w-[20px] h-[20px] sm:w-[32px] sm:h-[32px] rounded-full absolute left-8 sm:left-1/2 sm:-translate-x-1/2 top-8 sm:top-16 sm:-ml-48"></div>
       <img src={Textura} className="-z-10 mt-32 md:mt-72" alt="contacto" />
       <div className="bg-primary w-full h-[800px] md:h-48"></div>

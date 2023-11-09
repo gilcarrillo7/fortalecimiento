@@ -29,7 +29,7 @@ const IndexPage: React.FC<PageProps> = () => {
           className={`absolute right-0 sm:top-1/2 sm:-translate-y-1/2`}
           alt="home"
         />
-        <div className="relative flex flex-col sm:items-center text-center -mt-[95px]">
+        <div className="relative flex flex-col sm:items-center text-center -mt-[50px]">
           <div className={`relative z-0 mb-12`}>
             <div
               className={`absolute -z-10 w-[352px] h-[352px] -left-[18px] -top-[18px] bg-secundary`}

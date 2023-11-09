@@ -29,7 +29,10 @@ const Testimonies = () => {
   ];
   return (
     <Page className="bg-complementary">
-      <div className="flex items-center justify-start sm:justify-center mb-8 sm:mb-16">
+      <div
+        id="testimonios"
+        className="flex items-center justify-start sm:justify-center mb-8 sm:mb-16"
+      >
         <img
           className="md:mr-6 scale-50 md:scale-100 origin-left"
           alt=""

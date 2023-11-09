@@ -16,7 +16,7 @@ const Section5 = () => {
     <Page>
       <div className="pb-24 md:pb-0">
         <img
-          className="relative md:absolute md:-top-24 left-1/2 -translate-x-1/2 my-8 md:my-0"
+          className="relative md:absolute md:-top-24 left-1/2 -translate-x-1/2 my-8 md:my-0 -z-10"
           src={Textura}
           alt=""
         />
