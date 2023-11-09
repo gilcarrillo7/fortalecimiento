@@ -9,8 +9,8 @@ import Img1 from "../images/quienes/1.svg";
 import Grupo from "../images/quienes/grupo.svg";
 import Textura1 from "../images/quienes/textura1.svg";
 import Textura2 from "../images/quienes/textura2.svg";
-import Corner1 from "../images/quienes/Corner1.svg";
-import Corner2 from "../images/quienes/Corner2.svg";
+import Corner1 from "../images/quienes/corner1.svg";
+import Corner2 from "../images/quienes/corner2.svg";
 import Logo1 from "../images/quienes/logo1.svg";
 import Logo2 from "../images/quienes/logo2.svg";
 
