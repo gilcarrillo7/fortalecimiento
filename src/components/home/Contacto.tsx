@@ -15,7 +15,7 @@ const Contacto = () => {
         className="absolute left-1/2 -translate-x-1/2 top-12 md:top-24 z-0"
         alt="contacto"
       />
-      <div className="absolute top-72 md:top-96 left-1/2 -translate-x-1/2 text-center bg-white py-12 px-4 px-16 xl:px-36 mx-auto w-[calc(100%-2rem)] lg:w-[992px]">
+      <div className="absolute top-72 md:top-96 left-1/2 -translate-x-1/2 text-center bg-white py-12 px-4 md:px-16 xl:px-24 mx-auto w-[calc(100%-2rem)] lg:w-[992px]">
         <p className="text-primary text-xl sm:text-2xl">
           ¿Te interesa fortalecer a tu OSC?
         </p>
@@ -43,7 +43,9 @@ const Contacto = () => {
               />
             </div>
             <div className="w-full md:w-1/2 pt-4 md:pt-0">
-              <Button variant={"white"}>Enviar</Button>
+              <Button variant={"white"} className="md:float-left">
+                Enviar
+              </Button>
             </div>
           </div>
         </form>

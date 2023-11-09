@@ -14,9 +14,9 @@ const Circle = ({ className }: { className: string }) => {
 const Section5 = () => {
   return (
     <Page>
-      <div className="pb-24 md:pb-0">
+      <div className="pb-24 md:pb-24 pt-[350px]">
         <img
-          className="relative md:absolute md:-top-24 left-1/2 -translate-x-1/2 my-8 md:my-0 -z-10"
+          className="relative md:absolute md:top-8 left-1/2 -translate-x-1/2 my-8 md:my-0 -z-10"
           src={Textura}
           alt=""
         />
@@ -33,9 +33,9 @@ const Section5 = () => {
             </span>
           </p>
         </div>
-        <Circle className="hidden md:block absolute right-1/4 top-24" />
+        <Circle className="hidden md:block absolute left-1/2 md:left-3/4 -translate-x-1/2 top-64" />
         <img
-          className="relative mt-12 md:mt-0 md:absolute left-1/2 md:left-3/4 -translate-x-1/2 md:top-1/2 scale-75 md:scale-100"
+          className="relative mt-12 md:mt-0 md:absolute left-1/2 md:left-3/4 -translate-x-1/2 md:top-1/2 md:mt-24 scale-75 md:scale-100"
           src={Textura2}
           alt=""
         />

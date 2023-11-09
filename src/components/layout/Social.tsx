@@ -3,8 +3,6 @@ import SocialIcon from "../shared/SocialIcon";
 
 const Social = () => {
   const social = [
-    { name: "spotify", url: "" },
-    { name: "twitter", url: "" },
     { name: "linkedin", url: "" },
     { name: "instagram", url: "" },
     { name: "facebook", url: "" },

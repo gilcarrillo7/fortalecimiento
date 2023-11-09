@@ -39,7 +39,7 @@ const Testimonies = () => {
           src={Textura}
         />
         <div className="relative -ml-16 sm:ml-0">
-          <h1 className="text-primary text-3xl sm:text-4xl sm:text-5xl">
+          <h1 className="text-primary text-3xl sm:text-4xl sm:text-5xl font-semibold">
             Testimonios
           </h1>
           <div className="absolute -right-32 top-1/2 -translate-y-1/2 bg-secundary w-[81px] h-[81px] rounded-full hidden sm:block"></div>
@@ -53,12 +53,18 @@ const Testimonies = () => {
         preventMovementUntilSwipeScrollTolerance={true}
         swipeScrollTolerance={50}
         className=""
+        autoPlay={true}
+        infiniteLoop={true}
       >
         {tests.map((test) => (
           <div key={test.author} className="text-left">
-            <p className="text-xl sm:text-2xl">{test.description}</p>
-            <p className="mt-8 text-lg text-primary">{test.author}</p>
-            <p className="font-semibold pb-20 text-primary">{test.role}</p>
+            <p className="text-xl sm:text-3xl font-light">{test.description}</p>
+            <p className="mt-8 text-xl sm:text-3xl text-primary">
+              {test.author}
+            </p>
+            <p className="font-bold pb-20 text-primary sm:text-lg">
+              {test.role}
+            </p>
           </div>
         ))}
       </Carousel>

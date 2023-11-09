@@ -62,20 +62,27 @@ const Section2 = () => {
               vida democrática de nuestro país.
             </p>
             <p>
-              Adaptamos el acompañamiento integral a las necesidades de
-              fortalecimiento de cada organización. Brindamos opciones de
-              capacitación, formación y consultoría para potenciar su impacto.
+              Adaptamos el{" "}
+              <span className="text-primary font-bold">
+                acompañamiento integral
+              </span>{" "}
+              a las necesidades de fortalecimiento de cada organización.
+              Brindamos opciones de{" "}
+              <span className="text-primary font-bold">
+                capacitación, formación y consultoría para potenciar su impacto.
+              </span>{" "}
               Las apoyamos a vincularse con diferentes actores para generar
               oportunidades de colaboración a nivel global.
             </p>
             <p>
-              En nuestra experiencia de más de 20 años, hemos tenido la
-              posibilidad de acompañar a miles de organizaciones logrando que
-              estén consolidadas en sus diferentes componentes organizativos, de
-              gestión e institucionalidad, para que puedan entregar servicios de
-              alta calidad, generando mayores beneficios para las personas y
-              entornos en donde desarrollan sus modelos de intervención,
-              convirtiéndose en agentes de transformaciones sociales.
+              En nuestra <MarkedText>experiencia de más de 20 años,</MarkedText>{" "}
+              hemos tenido la posibilidad de acompañar a miles de organizaciones
+              logrando que estén consolidadas en sus diferentes componentes
+              organizativos, de gestión e institucionalidad, para que puedan
+              entregar servicios de alta calidad, generando mayores beneficios
+              para las personas y entornos en donde desarrollan sus modelos de
+              intervención, convirtiéndose en agentes de transformaciones
+              sociales.
             </p>
           </div>
           <div className="mb-12 md:mb-0">

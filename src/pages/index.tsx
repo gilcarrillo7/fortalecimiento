@@ -41,7 +41,7 @@ const IndexPage: React.FC<PageProps> = () => {
               alt="home"
             />
           </div>
-          <p className="text-2xl sm:text-3xl underline">
+          <p className="text-2xl sm:text-3xl">
             Fortalecemos capacidades.
             <br />
             <MarkedText className="text-primary font-bold">

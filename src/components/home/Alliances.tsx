@@ -47,7 +47,7 @@ const Alliances = () => {
       />
       <h1
         id="alianzas"
-        className={`text-primary text-3xl sm:text-5xl font-semibold text-center mb-12 mt-52 md:mt-[275px]`}
+        className={`text-primary text-3xl sm:text-5xl font-semibold mb-12 mt-52 md:mt-[275px]`}
       >
         Nuestras alianzas
       </h1>
@@ -58,6 +58,7 @@ const Alliances = () => {
         preventMovementUntilSwipeScrollTolerance={true}
         swipeScrollTolerance={50}
         className="mb-20"
+        infiniteLoop={true}
       >
         <div className="">
           <div className="grid grid-cols-2 md:grid-cols-5 gap-8 items-center">
