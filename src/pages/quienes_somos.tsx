@@ -1,76 +1,113 @@
-import * as React from "react";
+import React, { useState } from "react";
 import { navigate, type HeadFC, type PageProps } from "gatsby";
 import Layout from "../components/layout/Layout";
 import Page from "../components/layout/Page";
 import Button from "../components/shared/Button";
 
 import MarkedText from "../components/shared/MarkedText";
-import Img1 from "../images/quienes/1.svg";
 import Grupo from "../images/quienes/grupo.svg";
 import Textura1 from "../images/quienes/textura1.svg";
 import Textura2 from "../images/quienes/textura2.svg";
 import Corner1 from "../images/quienes/corner1.svg";
-import Corner2 from "../images/quienes/corner2.svg";
 import Logo1 from "../images/quienes/logo1.svg";
 import Logo2 from "../images/quienes/logo2.svg";
+import Preview from "../images/quienes/preview.svg";
+import PlayIcon from "../images/quienes/playIcon.svg";
+import Half from "../images/quienes/half.svg";
+import Video from "../images/quienes/video.gif";
+import Ico1 from "../images/quienes/ico_1.svg";
+import Ico2 from "../images/quienes/ico_2.svg";
+import Ico3 from "../images/quienes/ico_3.svg";
+import Ico4 from "../images/quienes/ico_4.svg";
+import Ico5 from "../images/quienes/ico_5.svg";
+import Ico6 from "../images/quienes/ico_6.svg";
+import Ico7 from "../images/quienes/ico_7.svg";
+import Ico8 from "../images/quienes/ico_8.svg";
+import IcoMapa from "../images/quienes/ico_mapa.svg";
 
 const QuienesSomos: React.FC<PageProps> = () => {
   const historia = [
     {
       anio: 2005,
       text: "<span class='text-primary font-semibold'><span class='text-xl'>1,857</span> integrantes de OSC de <span class='text-xl'>10</span> municipios</span> de Chihuahua se beneficiaron con servicios de capacitación.",
-      img: Img1,
+      img: Ico1,
     },
     {
       anio: 2010,
       text: "<span class='text-primary font-semibold'>Aperturamos</span> el Centro para el Fortalecimiento en la ciudad de San Luis Potosí.",
-      img: Img1,
+      img: IcoMapa,
     },
     {
       anio: 2011,
       text: "<span class='text-primary font-semibold'>Acompañamos la apertura</span> del Centro para el Fortalecimiento en Obregón, Sonora, como una <span class='text-primary font-semibold'>alianza</span> entre la Fundación Tichi Muñoz y el Tec de Monterrey campus Obregón.",
-      img: Img1,
+      img: Ico2,
     },
     {
       anio: 2015,
       text: "La Junta de Asistencia Social Privada y la Fundación del Dr. Simi <span class='text-primary font-semibold'>nos otorgaron el Premio Estatal a la Filantropía.</span>",
-      img: Img1,
+      img: Ico3,
     },
     {
       anio: 2018,
       text: "Acompañamos de forma directa a <span class='text-primary font-semibold text-xl'>191</span> representantes de OSC y de forma indirecta a más de <span class='text-primary font-semibold'>177,104</span> personas usuarias.",
-      img: Img1,
+      img: Ico4,
     },
     {
       anio: 2021,
       text: "<span class='text-primary font-semibold'>Primer centro certificador de habla hispana en el mundo</span> para replicar la metodología para la gestión de proyectos de desarrollo (Project DPro). De la organización internacional Project Management for NGOs (<span class='text-primary font-semibold'>PM4NGOs</span>).",
-      img: Img1,
+      img: Ico5,
     },
     {
       anio: 2022,
       text: "Tuvimos un alcance de <span class='text-primary font-semibold text-xl'>17 estados</span> de México. Con el financiamiento de Rainforest Alliance, diseñamos e implementamos programas de capacitación para organizaciones de <span class='text-primary font-semibold'>Guatemala, Nicaragua, Honduras y sur de México</span>.",
-      img: Img1,
+      img: Ico6,
     },
     {
       anio: 0,
       text: "En alianza con <span class='text-primary font-semibold'>World Vision México, el DIF Municipal de Chihuahua y FECHAC</span>, iniciamos la Certificación Espacios Favorables para la Niñez que beneficiará a más de 1000 niñas, niños y adolescentes.",
-      img: Img1,
+      img: Ico7,
     },
     {
       anio: 2023,
       text: "<span class='text-primary font-semibold'>Incrementamos</span> nuestra atención en un (%), incrementando así nuestra base de donantes e ingresos por servicios y proyectos.",
-      img: Img1,
+      img: Ico8,
     },
   ];
 
+  const [playing, setPlaying] = useState(false);
+
   return (
     <Layout headerPrimary>
-      <Page className="bg-primary">
-        <div className="text-center -mt-[95px]">
-          <p className="text-secundary text-2xl sm:text-3xl font-light">
-            Conoce el impacto de nuestro trabajo a lo largo de nuestros{" "}
-            <strong className="font-bold">20 años</strong> operando.
-          </p>
+      <Page className="bg-primary -mt-[95px]">
+        <div className="flex flex-col">
+          <div className="pb-[150px] flex items-center justify-center">
+            <div className="relative">
+              {playing ? (
+                <img src={Video} className="h-[358px]" alt="video" />
+              ) : (
+                <>
+                  <img src={Preview} className="w-full h-[358px]" alt="" />
+                  <img
+                    src={PlayIcon}
+                    className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 cursor-pointer max-width-full"
+                    alt=""
+                    onClick={() => setPlaying(true)}
+                  />
+                </>
+              )}
+            </div>
+            <img
+              src={Half}
+              className="sm:ml-16 absolute sm:relative -right-36 sm:right-0"
+              alt=""
+            />
+          </div>
+          <div className="text-center -mt-[95px]">
+            <p className="text-secundary text-2xl sm:text-3xl font-light w-full sm:w-2/3 mx-auto">
+              Conoce el impacto de nuestro trabajo a lo largo de nuestros{" "}
+              <strong className="font-bold">20 años</strong> operando.
+            </p>
+          </div>
         </div>
       </Page>
       <div className="container">
@@ -91,7 +128,7 @@ const QuienesSomos: React.FC<PageProps> = () => {
                 />
                 <img
                   src={item.img}
-                  className={`md:absolute md:top-1/2 md:-translate-y-1/2 ${
+                  className={`md:absolute md:top-1/2 md:-translate-y-1/2 w-[100px] sm:w-[150px] ${
                     i % 2 === 0
                       ? "md:left-full ml-4 order-2"
                       : "md:right-full mr-4 order-1"
@@ -136,14 +173,22 @@ const QuienesSomos: React.FC<PageProps> = () => {
         </div>
       </div>
       <div className="relative">
-        <div className="flex">
-          <img className="-mt-64" src={Textura2} alt="" />
-          <img className="flex-grow" src={Grupo} alt="" />
-        </div>
-        <div className="container pb-16">
-          <p className="text-primary text-3xl sm:text-5xl bg-white">
+        <div className="container relative flex">
+          <p className="text-primary text-3xl sm:text-5xl bg-white mr-8 pt-[530px]">
             Consejo directivo
           </p>
+          <img
+            className="absolute w-1/2 -left-[30px] top-0 -bottom-[200px]"
+            src={Textura2}
+            alt=""
+          />
+          <img
+            className="absolute w-full top-0 left-[500px]"
+            src={Grupo}
+            alt=""
+          />
+        </div>
+        <div className="container pb-40 sm:pb-16 py-8">
           <div className="flex flex-col md:flex-row">
             <div className="w-full md:w-5/12">
               <p className="my-8">
@@ -252,14 +297,13 @@ const QuienesSomos: React.FC<PageProps> = () => {
             </div>
           </div>
         </div>
-        <img src={Corner1} className="absolute bottom-0 right-0" alt="corner" />
         <img
-          src={Corner2}
-          className="absolute bottom-32 right-24"
+          src={Corner1}
+          className="absolute left-1/2 sm:left-[unset] -translate-x-1/2 sm:translate-x-0 -bottom-[115px] sm:-bottom-[222px] right-0 w-[125px] sm:w-[250px] z-10"
           alt="corner"
         />
       </div>
-      <div className="relative bg-complementary py-12">
+      <div className="relative bg-complementary pt-40 sm:py-12">
         <div className="container text-xl font-light">
           <div className="w-full sm:w-2/3 mb-8">
             <p className="">
@@ -282,8 +326,8 @@ const QuienesSomos: React.FC<PageProps> = () => {
             </Button>
           </div>
           <div className="sm:flex flex-col sm:flex-row gap-8 justify-center">
-            <img src={Logo1} alt="logo 1" className="mx-auto" />
-            <img src={Logo2} alt="logo 1" className="mx-auto" />
+            <img src={Logo1} alt="logo 1" className="mx-auto mb-6" />
+            <img src={Logo2} alt="logo 1" className="mx-auto mb-16" />
           </div>
         </div>
       </div>
