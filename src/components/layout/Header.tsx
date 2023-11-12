@@ -31,13 +31,13 @@ const Header = ({ headerPrimary = false }: { headerPrimary?: boolean }) => {
             <img
               src={menuOpen || headerPrimary ? LogoWhite : Logo}
               alt="Fortalecimiento Logo"
-              className="w-36"
+              className="w-28 sm:w-36 mr-4"
             />
           </a>
           <img
             src={menuOpen || headerPrimary ? LogoSideWhite : LogoSide}
             alt="Fortalecimiento Logo 20 años"
-            className="w-36"
+            className="w-28 sm:w-36"
           />
         </div>
         <HamburgerMenu headerPrimary={headerPrimary} />

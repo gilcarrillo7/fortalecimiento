@@ -40,14 +40,18 @@ const Menu = () => {
             <Option text="Alianzas" url="/#alianzas" />
           </div>
           <div className="flex flex-col gap-6 sm:gap-12 sm:w-1/2">
-            <Option text="Nuestra oferta" url="" />
+            <Option text="Nuestra oferta" url="/nuestra_oferta" />
             <Option text="Aula Virtual" url="" />
             <Option text="Testimonios" url="/#testimonios" />
             <Option text="Contacto" url="/#contacto" />
           </div>
         </div>
         <Social />
-        <img src={MenuText} className="absolute right-0 top-1/2 -translate-y-1/2" alt="" />
+        <img
+          src={MenuText}
+          className="absolute right-0 top-1/2 -translate-y-1/2"
+          alt=""
+        />
       </div>
     </div>
   );

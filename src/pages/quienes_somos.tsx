@@ -86,10 +86,10 @@ const QuienesSomos: React.FC<PageProps> = () => {
                 <img src={Video} className="h-[358px]" alt="video" />
               ) : (
                 <>
-                  <img src={Preview} className="w-full h-[358px]" alt="" />
+                  <img src={Preview} className="max-w-[calc(100%-15px)] h-[358px]" alt="" />
                   <img
                     src={PlayIcon}
-                    className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 cursor-pointer max-width-full"
+                    className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 cursor-pointer"
                     alt=""
                     onClick={() => setPlaying(true)}
                   />
@@ -98,7 +98,7 @@ const QuienesSomos: React.FC<PageProps> = () => {
             </div>
             <img
               src={Half}
-              className="sm:ml-16 absolute sm:relative -right-36 sm:right-0"
+              className="sm:ml-16 absolute sm:relative -right-40 sm:right-0"
               alt=""
             />
           </div>
@@ -143,7 +143,7 @@ const QuienesSomos: React.FC<PageProps> = () => {
           Selecciona el año y descarga el documento
         </p>
       </div>
-      <div className="min-w-screen min-h-screen h-screen font-semibold text-4xl sm:text-6xl">
+      <div className="min-w-screen min-h-screen h-screen font-semibold text-4xl sm:text-6xl z-10">
         <div className="flex h-full flex-wrap">
           <div className="w-1/2 sm:w-1/3 h-auto sm:h-1/2 bg-complementary text-primary flex items-center justify-center">
             2018
@@ -173,22 +173,22 @@ const QuienesSomos: React.FC<PageProps> = () => {
         </div>
       </div>
       <div className="relative">
-        <div className="container relative flex">
-          <p className="text-primary text-3xl sm:text-5xl bg-white mr-8 pt-[530px]">
-            Consejo directivo
-          </p>
+        <div className="relative sm:flex -z-10 sm:z-0">
           <img
-            className="absolute w-1/2 -left-[30px] top-0 -bottom-[200px]"
+            className="w-full sm:w-[600px] -z-10 -mt-[100px] sm:-mt-[300px]"
             src={Textura2}
             alt=""
           />
           <img
-            className="absolute w-full top-0 left-[500px]"
+            className="w-full sm:w-auto sm:flex-grow -mt-[100px] sm:mt-0 z-10"
             src={Grupo}
             alt=""
           />
         </div>
-        <div className="container pb-40 sm:pb-16 py-8">
+        <div className="container pb-40 sm:pb-16 py-8 z-0">
+          <p className="text-primary text-3xl sm:text-5xl bg-white sm:-mt-[100px] sm:mb-[100px]">
+            Consejo directivo
+          </p>
           <div className="flex flex-col md:flex-row">
             <div className="w-full md:w-5/12">
               <p className="my-8">

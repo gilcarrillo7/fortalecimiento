@@ -5,6 +5,7 @@ import Image1 from "../../images/articles/image1.svg";
 import Image2 from "../../images/articles/image2.svg";
 import Image3 from "../../images/articles/image3.svg";
 import Article from "./Article";
+import { Link } from "gatsby";
 
 const Articles = () => {
   const arts = [
@@ -38,9 +39,9 @@ const Articles = () => {
         Artículos
       </h1>
       <div className="flex flex-col sm:flex-row mb-12 gap-6 sm:gap-20 lg:gap-40">
-        {arts.map((art) => (
+        {arts.map((art, i) => (
           <Article
-            key={`${art.link}`}
+            key={`art${i}${art.link}`}
             image={art.image}
             title={art.title}
             description={art.description}
@@ -48,12 +49,12 @@ const Articles = () => {
           />
         ))}
       </div>
-      <a
+      <Link
         className="text-primary font-light text-2xl sm:text-3xl hover:underline"
-        href="#"
+        to="/articulos"
       >
         Ver todos
-      </a>
+      </Link>
     </Page>
   );
 };
