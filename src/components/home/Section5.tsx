@@ -14,7 +14,7 @@ const Circle = ({ className }: { className: string }) => {
 const Section5 = () => {
   return (
     <Page>
-      <div className="pb-24 md:pb-24 pt-[350px]">
+      <div className="pb-24 md:pb-24 md:pt-[350px]">
         <img
           className="relative md:absolute md:top-8 left-1/2 -translate-x-1/2 my-8 md:my-0 -z-10"
           src={Textura}
