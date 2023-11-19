@@ -29,47 +29,47 @@ const QuienesSomos: React.FC<PageProps> = () => {
   const historia = [
     {
       anio: 2005,
-      text: "<span class='text-primary font-semibold'><span class='text-xl'>1,857</span> integrantes de OSC de <span class='text-xl'>10</span> municipios</span> de Chihuahua se beneficiaron con servicios de capacitación.",
+      text: "<span class='text-primary font-bold'><span class='text-xl'>1,857</span> integrantes de OSC de <span class='text-xl'>10</span> municipios</span> de Chihuahua se beneficiaron con servicios de capacitación.",
       img: Ico1,
     },
     {
       anio: 2010,
-      text: "<span class='text-primary font-semibold'>Aperturamos</span> el Centro para el Fortalecimiento en la ciudad de San Luis Potosí.",
+      text: "<span class='text-primary font-bold'>Aperturamos</span> el Centro para el Fortalecimiento en la ciudad de San Luis Potosí.",
       img: IcoMapa,
     },
     {
       anio: 2011,
-      text: "<span class='text-primary font-semibold'>Acompañamos la apertura</span> del Centro para el Fortalecimiento en Obregón, Sonora, como una <span class='text-primary font-semibold'>alianza</span> entre la Fundación Tichi Muñoz y el Tec de Monterrey campus Obregón.",
+      text: "<span class='text-primary font-bold'>Acompañamos la apertura</span> del Centro para el Fortalecimiento en Obregón, Sonora, como una <span class='text-primary font-bold'>alianza</span> entre la Fundación Tichi Muñoz y el Tec de Monterrey campus Obregón.",
       img: Ico2,
     },
     {
       anio: 2015,
-      text: "La Junta de Asistencia Social Privada y la Fundación del Dr. Simi <span class='text-primary font-semibold'>nos otorgaron el Premio Estatal a la Filantropía.</span>",
+      text: "La Junta de Asistencia Social Privada y la Fundación del Dr. Simi <span class='text-primary font-bold'>nos otorgaron el Premio Estatal a la Filantropía.</span>",
       img: Ico3,
     },
     {
       anio: 2018,
-      text: "Acompañamos de forma directa a <span class='text-primary font-semibold text-xl'>191</span> representantes de OSC y de forma indirecta a más de <span class='text-primary font-semibold'>177,104</span> personas usuarias.",
+      text: "Acompañamos de forma directa a <span class='text-primary font-bold text-xl'>191</span> representantes de OSC y de forma indirecta a más de <span class='text-primary font-bold'>177,104</span> personas usuarias.",
       img: Ico4,
     },
     {
       anio: 2021,
-      text: "<span class='text-primary font-semibold'>Primer centro certificador de habla hispana en el mundo</span> para replicar la metodología para la gestión de proyectos de desarrollo (Project DPro). De la organización internacional Project Management for NGOs (<span class='text-primary font-semibold'>PM4NGOs</span>).",
+      text: "<span class='text-primary font-bold'>Primer centro certificador de habla hispana en el mundo</span> para replicar la metodología para la gestión de proyectos de desarrollo (Project DPro). De la organización internacional Project Management for NGOs (<span class='text-primary font-bold'>PM4NGOs</span>).",
       img: Ico5,
     },
     {
       anio: 2022,
-      text: "Tuvimos un alcance de <span class='text-primary font-semibold text-xl'>17 estados</span> de México. Con el financiamiento de Rainforest Alliance, diseñamos e implementamos programas de capacitación para organizaciones de <span class='text-primary font-semibold'>Guatemala, Nicaragua, Honduras y sur de México</span>.",
+      text: "Tuvimos un alcance de <span class='text-primary font-bold text-xl'>17 estados</span> de México. Con el financiamiento de Rainforest Alliance, diseñamos e implementamos programas de capacitación para organizaciones de <span class='text-primary font-bold'>Guatemala, Nicaragua, Honduras y sur de México</span>.",
       img: Ico6,
     },
     {
       anio: 0,
-      text: "En alianza con <span class='text-primary font-semibold'>World Vision México, el DIF Municipal de Chihuahua y FECHAC</span>, iniciamos la Certificación Espacios Favorables para la Niñez que beneficiará a más de 1000 niñas, niños y adolescentes.",
+      text: "En alianza con <span class='text-primary font-bold'>World Vision México, el DIF Municipal de Chihuahua y FECHAC</span>, iniciamos la Certificación Espacios Favorables para la Niñez que beneficiará a más de 1000 niñas, niños y adolescentes.",
       img: Ico7,
     },
     {
       anio: 2023,
-      text: "<span class='text-primary font-semibold'>Incrementamos</span> nuestra atención en un (%), incrementando así nuestra base de donantes e ingresos por servicios y proyectos.",
+      text: "<span class='text-primary font-bold'>Incrementamos</span> nuestra atención en un (%), incrementando así nuestra base de donantes e ingresos por servicios y proyectos.",
       img: Ico8,
     },
   ];
@@ -78,7 +78,7 @@ const QuienesSomos: React.FC<PageProps> = () => {
 
   return (
     <Layout headerPrimary>
-      <Page className="bg-primary -mt-[95px]">
+      <Page className="bg-primary">
         <div className="flex flex-col">
           <div className="pb-[150px] flex items-center justify-center">
             <div className="relative">
@@ -145,11 +145,11 @@ const QuienesSomos: React.FC<PageProps> = () => {
       </div>
       <div className="min-w-screen min-h-screen h-screen font-semibold text-4xl sm:text-6xl z-10">
         <div className="flex h-full flex-wrap">
-          <div className="w-1/2 sm:w-1/3 h-auto sm:h-1/2 bg-complementary text-primary flex items-center justify-center">
+          <div className="w-1/2 sm:w-1/3 h-auto sm:min-h-1/2 2xl:h-1/2 bg-complementary text-primary flex items-center justify-center">
             2018
           </div>
-          <div className="w-1/2 sm:w-1/3 h-auto sm:h-1/2 bg-secundary px-4 pb-4">
-            <img src={Textura1} className="mx-auto" alt="textura" />
+          <div className="w-1/2 sm:w-1/3 h-auto sm:min-h-1/2 2xl:h-1/2 bg-secundary px-4 pb-4">
+            <img src={Textura1} className="w-20 sm:w-auto mx-auto" alt="textura" />
             <p className="text-primary text-xl sm:text-2xl text-center mt-8">
               Informes anuales
             </p>
@@ -158,7 +158,7 @@ const QuienesSomos: React.FC<PageProps> = () => {
               de la Sociedad Civil a través de nuestros informes anuales.
             </p>
           </div>
-          <div className="w-1/2 sm:w-1/3 min-h-[250px] sm:h-1/2 bg-primary text-secundary flex items-center justify-center">
+          <div className="w-1/2 sm:w-1/3 min-h-[250px] sm:min-h-1/2 2xl:h-1/2 bg-primary text-secundary flex items-center justify-center">
             2019
           </div>
           <div className="w-1/2 sm:w-1/3 min-h-[250px] sm:h-1/2 bg-secundary text-primary flex items-center justify-center">
@@ -191,7 +191,7 @@ const QuienesSomos: React.FC<PageProps> = () => {
           </p>
           <div className="flex flex-col md:flex-row">
             <div className="w-full md:w-5/12">
-              <p className="my-8">
+              <p className="mb-8">
                 <span className="font-bold text-primary">
                   El CFOSC es guiado por un grupo de 15 ciudadanas y ciudadanos
                   visionarios comprometidos con las causas sociales y de un
@@ -325,9 +325,9 @@ const QuienesSomos: React.FC<PageProps> = () => {
               Contacto
             </Button>
           </div>
-          <div className="sm:flex flex-col sm:flex-row gap-8 justify-center">
-            <img src={Logo1} alt="logo 1" className="mx-auto mb-6" />
-            <img src={Logo2} alt="logo 1" className="mx-auto mb-16" />
+          <div className="sm:flex flex-col sm:flex-row gap-8 justify-center items-center py-12">
+            <img src={Logo2} alt="logo 1" className="mx-auto mb-8 sm:mb-0" />
+            <img src={Logo1} alt="logo 1" className="mx-auto" />
           </div>
         </div>
       </div>

@@ -15,7 +15,7 @@ const Section3 = () => {
         </div>
         <div className="flex items-center jusitfy-center lg:pl-16 xl:pl-32">
           <div className="p-4">
-            <p className="text-3xl sm:text-4xl font-light mb-6 sm:max-w-[450px]">
+            <p className="text-3xl sm:text-4xl font-light mb-6 sm:max-w-[480px]">
               “El verdadero poder es empoderar a alguien más”.
             </p>
             <p className="text-xl font-bold text-primary">Toni Morrison</p>

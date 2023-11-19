@@ -24,7 +24,7 @@ const Column = ({
 
 const Section4 = () => {
   return (
-    <Page>
+    <Page className="py-8 sm:py-16">
       <p className="text-2xl sm:text-3xl font-light text-center mb-12 sm:mb-32">
         El eje rector de nuestro modelo de intervención es la{" "}
         <span className="font-bold text-primary">sostenibilidad</span> de las

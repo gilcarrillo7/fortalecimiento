@@ -49,7 +49,7 @@ const Menu = () => {
         <Social />
         <img
           src={MenuText}
-          className="absolute right-0 top-1/2 -translate-y-1/2"
+          className="absolute sm:-mt-20 right-0 top-1/2 -translate-y-1/2"
           alt=""
         />
       </div>

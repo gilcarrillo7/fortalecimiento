@@ -17,7 +17,7 @@ const Header = ({ headerPrimary = false }: { headerPrimary?: boolean }) => {
   const menuOpen = useAppSelector(selectMenuOpen);
 
   return (
-    <header className={`${headerPrimary ? "bg-primary" : "bg-transparent"}`}>
+    <header className={`absolute w-full ${headerPrimary ? "bg-primary" : "bg-transparent"}`}>
       <div className="container flex justify-between items-center py-4">
         <div className="flex justify-between items-center gap-2 sm:gap-8 z-50">
           <a

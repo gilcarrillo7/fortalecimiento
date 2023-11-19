@@ -15,7 +15,7 @@ import Logo2 from "../images/oferta/logo2.svg";
 const Oferta: React.FC<PageProps> = () => {
   return (
     <Layout>
-      <Page className="sm:-mt-[95px]">
+      <Page className="">
         <div className="flex flex-col sm:flex-row items-center">
           <div className="sm:order-2 w-full sm:w-1/2">
             <img className="" src={Triangle} alt="" />
@@ -42,7 +42,7 @@ const Oferta: React.FC<PageProps> = () => {
           </div>
         </div>
       </Page>
-      <Page>
+      <Page className="py-6 sm:py-12">
         <h2 className="text-center text-2xl sm:text-3xl mt-16 sm:mt-0">
           Conoce nuestros servicios <br />
           <span className="font-bold text-primary">
@@ -51,7 +51,7 @@ const Oferta: React.FC<PageProps> = () => {
         </h2>
         <div className="mt-12 flex flex-col sm:flex-row gap-16">
           <div className="w-full sm:w-2/3 sm:order-2">
-            <ul className="list-disc text-2xl sm:text-3xl font-light pl-8">
+            <ul className="list-disc text-2xl sm:text-3xl font-light">
               <li className="mb-6">
                 <MarkedText>Programa 360</MarkedText>
               </li>
@@ -84,10 +84,10 @@ const Oferta: React.FC<PageProps> = () => {
           </div>
           <div className="w-full sm:w-1/3 sm:order-1">
             <img className="mx-auto" src={Img} alt="" />
-            <div className="relative mt-12">
+            <div className="relative mt-12 sm:mt-20">
               <img className="mx-auto" src={Textura1} alt="" />
               <img
-                className="absolute top-[calc(100%-80px)] left-1/2 -translate-x-1/2"
+                className="absolute top-[calc(100%-80px)] left-1/2 -translate-x-1/2 w-auto sm:w-24 md:w-32 lg:w-auto"
                 src={Textura2}
                 alt=""
               />
