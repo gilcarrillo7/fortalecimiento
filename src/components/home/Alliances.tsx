@@ -37,6 +37,7 @@ const Alliances = () => {
   return (
     <Page>
       <div
+        id="alianzas"
         className="w-full h-[174px] absolute left-0 top-0 xl:bg-[size:100%]"
         style={{ backgroundImage: `url(${Header})` }}
       ></div>
@@ -46,7 +47,6 @@ const Alliances = () => {
         src={Textura}
       />
       <h1
-        id="alianzas"
         className={`text-primary text-3xl sm:text-5xl font-semibold mb-12 mt-52 md:mt-[275px]`}
       >
         Nuestras alianzas
@@ -59,8 +59,9 @@ const Alliances = () => {
         swipeScrollTolerance={50}
         className="mb-20"
         infiniteLoop={true}
+        autoPlay={true}
       >
-        <div className="">
+        <div className="pb-12">
           <div className="grid grid-cols-2 md:grid-cols-5 gap-8 items-center">
             <img src={Img1} alt="" className="px-8 sm:px-4 lg:px-8" />
             <img src={Img2} alt="" className="px-8 sm:px-4 lg:px-8" />
@@ -92,7 +93,39 @@ const Alliances = () => {
             Alianzas locales
           </div>
         </div>
-        <div className="">
+        <div className="pb-12">
+          <div className="grid grid-cols-5 gap-8 items-center">
+            <img src={Img1} alt="" className="px-8 sm:px-4 lg:px-8" />
+            <img src={Img2} alt="" className="px-8 sm:px-4 lg:px-8" />
+            <img src={Img3} alt="" className="px-8 sm:px-4 lg:px-8" />
+            <img src={Img4} alt="" className="px-8 sm:px-4 lg:px-8" />
+            <img src={Img5} alt="" className="px-8 sm:px-4 lg:px-8" />
+            <img src={Img6} alt="" className="px-8 sm:px-4 lg:px-8" />
+            <img src={Img7} alt="" className="px-8 sm:px-4 lg:px-8" />
+            <img src={Img8} alt="" className="px-8 sm:px-4 lg:px-8" />
+            <img src={Img9} alt="" className="px-8 sm:px-4 lg:px-8" />
+            <img src={Img10} alt="" className="px-8 sm:px-4 lg:px-8" />
+            <img src={Img11} alt="" className="px-8 sm:px-4 lg:px-8" />
+            <img src={Img12} alt="" className="px-8 sm:px-4 lg:px-8" />
+            <img src={Img13} alt="" className="px-8 sm:px-4 lg:px-8" />
+            <img src={Img14} alt="" className="px-8 sm:px-4 lg:px-8" />
+            <img src={Img15} alt="" className="px-8 sm:px-4 lg:px-8" />
+            <img src={Img16} alt="" className="px-8 sm:px-4 lg:px-8" />
+            <img src={Img17} alt="" className="px-8 sm:px-4 lg:px-8" />
+            <img src={Img18} alt="" className="px-8 sm:px-4 lg:px-8" />
+            <img src={Img19} alt="" className="px-8 sm:px-4 lg:px-8" />
+            <img src={Img20} alt="" className="px-8 sm:px-4 lg:px-8" />
+            <img src={Img21} alt="" className="px-8 sm:px-4 lg:px-8" />
+            <img src={Img22} alt="" className="px-8 sm:px-4 lg:px-8" />
+            <img src={Img23} alt="" className="px-8 sm:px-4 lg:px-8" />
+            <img src={Img24} alt="" className="px-8 sm:px-4 lg:px-8" />
+            <img src={Img25} alt="" className="px-8 sm:px-4 lg:px-8" />
+          </div>
+          <div className="text-primary font-semibold pt-8 pb-12">
+            Alianzas internacionales
+          </div>
+        </div>
+        <div className="pb-12">
           <div className="grid grid-cols-5 gap-8 items-center">
             <img src={Img1} alt="" className="px-8 sm:px-4 lg:px-8" />
             <img src={Img2} alt="" className="px-8 sm:px-4 lg:px-8" />

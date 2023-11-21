@@ -1,5 +1,5 @@
 import * as React from "react";
-import Page from "../layout/Page";
+import { useInView } from "react-intersection-observer";
 import { Carousel } from "react-responsive-carousel";
 
 import Textura from "../../images/testText.svg";
@@ -7,6 +7,8 @@ import Textura from "../../images/testText.svg";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 
 const Testimonies = () => {
+  const { ref, inView } = useInView({ threshold: 0.3, triggerOnce: true });
+
   const tests = [
     {
       description:
@@ -28,47 +30,64 @@ const Testimonies = () => {
     },
   ];
   return (
-    <Page className="bg-complementary">
-      <div
-        id="testimonios"
-        className="flex items-center justify-start sm:justify-center mb-8 sm:mb-16"
-      >
-        <img
-          className="md:mr-6 scale-50 md:scale-100 origin-left"
-          alt=""
-          src={Textura}
-        />
-        <div className="relative -ml-16 sm:ml-0">
-          <h1 className="text-primary text-3xl sm:text-4xl sm:text-5xl font-semibold">
-            Testimonios
-          </h1>
-          <div className="absolute -right-32 top-1/2 -translate-y-1/2 bg-secundary w-[81px] h-[81px] rounded-full hidden sm:block"></div>
-          <div className="absolute -bottom-12 right-0 bg-secundary w-[35px] h-[35px] rounded-full"></div>
+    <div id="testimonios" ref={ref} className="bg-complementary">
+      <div className="flex flex-col items-center container py-8 sm:py-16">
+        <div className="w-full lg:w-[992px]">
+          <div className="flex items-center justify-start sm:justify-center mb-8 sm:mb-16">
+            <img
+              className={`md:mr-6 scale-50 md:scale-100 origin-left transition-all duration-1000 delay-700 ${
+                inView ? "opacity-100" : "opacity-0"
+              }`}
+              alt=""
+              src={Textura}
+            />
+            <div className="relative -ml-16 sm:ml-0">
+              <h1
+                className={`text-primary text-3xl sm:text-4xl sm:text-5xl font-semibold transition-all duration-1000 ${
+                  inView ? "opacity-100" : "translate-y-24 opacity-0"
+                }`}
+              >
+                Testimonios
+              </h1>
+              <div
+                className={`absolute -right-32 top-1/2 -translate-y-1/2 bg-secundary w-[81px] h-[81px] rounded-full hidden sm:block transition-all duration-1000 delay-100 ${
+                  inView ? "opacity-100" : "translate-x-24 opacity-0"
+                }`}
+              ></div>
+              <div
+                className={`absolute -bottom-12 right-0 bg-secundary w-[35px] h-[35px] rounded-full transition-all duration-1000 delay-300 ${
+                  inView ? "opacity-100" : "translate-x-24 opacity-0"
+                }`}
+              ></div>
+            </div>
+          </div>
+          <Carousel
+            showThumbs={false}
+            showArrows={false}
+            showStatus={false}
+            preventMovementUntilSwipeScrollTolerance={true}
+            swipeScrollTolerance={50}
+            className=""
+            autoPlay={true}
+            infiniteLoop={true}
+          >
+            {tests.map((test) => (
+              <div key={test.author} className="text-left">
+                <p className="text-xl sm:text-3xl font-light">
+                  {test.description}
+                </p>
+                <p className="mt-8 text-xl sm:text-3xl text-primary">
+                  {test.author}
+                </p>
+                <p className="font-bold pb-20 text-primary sm:text-lg">
+                  {test.role}
+                </p>
+              </div>
+            ))}
+          </Carousel>
         </div>
       </div>
-      <Carousel
-        showThumbs={false}
-        showArrows={false}
-        showStatus={false}
-        preventMovementUntilSwipeScrollTolerance={true}
-        swipeScrollTolerance={50}
-        className=""
-        autoPlay={true}
-        infiniteLoop={true}
-      >
-        {tests.map((test) => (
-          <div key={test.author} className="text-left">
-            <p className="text-xl sm:text-3xl font-light">{test.description}</p>
-            <p className="mt-8 text-xl sm:text-3xl text-primary">
-              {test.author}
-            </p>
-            <p className="font-bold pb-20 text-primary sm:text-lg">
-              {test.role}
-            </p>
-          </div>
-        ))}
-      </Carousel>
-    </Page>
+    </div>
   );
 };
 

@@ -176,7 +176,7 @@ const Articulos: React.FC<PageProps> = () => {
   return (
     <Layout>
       <Page className="text-2xl sm:text-3xl">
-        <h1 className="text-center mt-20">
+        <h1 className="text-center mt-36">
           Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
           <br />
           <span className="font-bold text-primary">

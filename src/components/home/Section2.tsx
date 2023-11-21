@@ -1,4 +1,6 @@
 import * as React from "react";
+import { useInView } from "react-intersection-observer";
+
 import Page from "../layout/Page";
 import MarkedText from "../shared/MarkedText";
 import Button from "../shared/Button";
@@ -8,16 +10,33 @@ import ImageBg3 from "../../images/homeBg3.svg";
 import ImageBg4 from "../../images/homeBg4.svg";
 
 const Circle = ({ img = "", index }: { img?: string; index: number }) => {
+  const { ref, inView } = useInView({ threshold: 0.3, triggerOnce: true });
   const style = img !== "" ? { backgroundImage: `url(${img})` } : {};
+  const delay = `delay-[${index * 100}ms]`;
+
   return (
     <div
-      className={`${
-        img !== "" ? "bg-[size:97px] sm:bg-[size:135px]" : "bg-secundary"
-      } w-[97px] xl:w-[135px] h-[97px] xl:h-[135px] rounded-full ${
+      ref={ref}
+      className={`group [perspective:1000px] w-[97px] xl:w-[135px] h-[97px] xl:h-[135px] transition-all duration-1000 ${delay} ${
         index > 11 ? "hidden xl:flex" : ""
-      }`}
-      style={style}
-    ></div>
+      } ${inView ? "opacity-100" : "opacity-0"}`}
+    >
+      <div className="relative h-full w-full transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+        <div
+          className={`absolute rounded-full w-full h-full ${
+            img !== "" ? "bg-[size:97px] sm:bg-[size:135px]" : "bg-secundary"
+          }`}
+          style={style}
+        >
+          {/* back content */}
+        </div>
+        <div
+          className={`absolute rounded-full my-rotate-y-180 w-full h-full [backface-visibility:hidden] [transform:rotateY(180deg)] ${
+            img !== "" ? "" : "bg-primary"
+          }`}
+        ></div>
+      </div>
+    </div>
   );
 };
 
@@ -43,14 +62,15 @@ const Section2 = () => {
   return (
     <Page>
       <div className="flex flex-col md:flex-row gap-8">
-        <div className="md:w-1/2 md:order-2 flex justify-center items-center">
+        <div className="md:w-1/2 md:order-3 flex justify-center items-center">
           <div className="flex flex-wrap w-[291px] xl:w-[540px]">
             {images.map((img, i) => (
               <Circle key={`${i}imgcirlce`} img={img} index={i} />
             ))}
           </div>
         </div>
-        <div className="md:w-1/2 md:order-1 flex flex-col justify-center">
+        <div className="w-0 md:w-[10%] md:order-2"></div>
+        <div className="md:w-2/5 md:order-1 flex flex-col justify-center">
           <div className="flex flex-col gap-4 mb-8">
             <p>
               <MarkedText>

@@ -17,7 +17,7 @@ const Option = ({ text, url }: { text: string; url: string }) => {
     <a
       role="button"
       tabIndex={0}
-      className="flex cursor-pointer"
+      className="flex cursor-pointer hover:font-medium"
       onClick={() => handleNav(url)}
     >
       <div className="relative">
@@ -34,14 +34,12 @@ const Menu = () => {
       <div className="container px-4 sm:px-10 sm:pb-8 sm:pt-16 flex flex-col w-screen sm:py-8">
         <div className="flex flex-col sm:flex-row text-2xl sm:text-4xl font-thin w-full gap-6 sm:gap-20 mb-16 sm:mb-24">
           <div className="flex flex-col gap-6 sm:gap-12 sm:w-1/2">
-            <Option text="Quienes somos" url="/quienes_somos" />
-            <Option text="Qué hacemos" url="" />
-            <Option text="Modelo de intervención" url="" />
-            <Option text="Alianzas" url="/#alianzas" />
+            <Option text="Quiénes somos" url="/quienes_somos" />
+            <Option text="Nuestra oferta" url="/nuestra_oferta" />
+            <Option text="Artículos" url="/articulos" />
           </div>
           <div className="flex flex-col gap-6 sm:gap-12 sm:w-1/2">
-            <Option text="Nuestra oferta" url="/nuestra_oferta" />
-            <Option text="Aula Virtual" url="" />
+            <Option text="Alianzas" url="/#alianzas" />
             <Option text="Testimonios" url="/#testimonios" />
             <Option text="Contacto" url="/#contacto" />
           </div>

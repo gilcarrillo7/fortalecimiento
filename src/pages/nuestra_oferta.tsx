@@ -1,47 +1,23 @@
 import * as React from "react";
+import { useInView } from "react-intersection-observer";
 import Layout from "../components/layout/Layout";
 import { HeadFC, PageProps, navigate } from "gatsby";
 import Page from "../components/layout/Page";
 import MarkedText from "../components/shared/MarkedText";
 import Button from "../components/shared/Button";
 
-import Triangle from "../images/oferta/triangle.svg";
 import Img from "../images/oferta/img.svg";
 import Textura1 from "../images/oferta/textura1.svg";
 import Textura2 from "../images/oferta/textura2.svg";
 import Logo1 from "../images/oferta/logo1.svg";
 import Logo2 from "../images/oferta/logo2.svg";
+import Fortalecimiento from "../components/oferta/Fortalecimiento";
 
 const Oferta: React.FC<PageProps> = () => {
+  const { ref, inView } = useInView({ threshold: 0.3, triggerOnce: true });
   return (
     <Layout>
-      <Page className="">
-        <div className="flex flex-col sm:flex-row items-center">
-          <div className="sm:order-2 w-full sm:w-1/2">
-            <img className="" src={Triangle} alt="" />
-          </div>
-          <div className="sm:order-1 w-full sm:w-1/2">
-            <MarkedText className="font-bold text-primary mb-4">
-              En el CFOSC apostamos por el fortalecimiento institucional para
-              apoyar a las organizaciones a lograr su misión.
-            </MarkedText>
-            <p className="mb-4">
-              Nuestro modelo de intervención está diseñado para acompañar a las
-              organizaciones en la generación de capacidades institucionales y
-              profesionales a través de recursos como asesorías, capacitaciones
-              y vinculaciones, en las dimensiones metodológica, financiera y
-              orgánica, de forma que esto contribuya a la sostenibilidad
-              institucional.
-            </p>
-            <p className="mb-12">Conoce más sobre nuestra metodología.</p>
-            <div className="text-center sm:text-left">
-              <Button variant="white" className="">
-                Descárgalo aquí
-              </Button>
-            </div>
-          </div>
-        </div>
-      </Page>
+      <Fortalecimiento />
       <Page className="py-6 sm:py-12">
         <h2 className="text-center text-2xl sm:text-3xl mt-16 sm:mt-0">
           Conoce nuestros servicios <br />
@@ -84,10 +60,18 @@ const Oferta: React.FC<PageProps> = () => {
           </div>
           <div className="w-full sm:w-1/3 sm:order-1">
             <img className="mx-auto" src={Img} alt="" />
-            <div className="relative mt-12 sm:mt-20">
-              <img className="mx-auto" src={Textura1} alt="" />
+            <div ref={ref} className="relative mt-12 sm:mt-20">
               <img
-                className="absolute top-[calc(100%-80px)] left-1/2 -translate-x-1/2 w-auto sm:w-24 md:w-32 lg:w-auto"
+                className={`mx-auto transition-all duration-1000 delay-100 ${
+                  inView ? "opacity-100" : "opacity-0 translate-y-32"
+                }`}
+                src={Textura1}
+                alt=""
+              />
+              <img
+                className={`absolute top-[calc(100%-80px)] left-1/2 -translate-x-1/2 w-auto sm:w-24 md:w-32 lg:w-auto transition-all duration-1000 delay-300 ${
+                  inView ? "opacity-100" : "opacity-0 translate-y-32"
+                }`}
                 src={Textura2}
                 alt=""
               />

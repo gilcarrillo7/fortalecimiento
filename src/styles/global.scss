@@ -4,6 +4,10 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
+.carousel .control-dots .dot {
+  margin: 0 20px !important;
+}
+
 .carousel .control-dots .dot,
 .carousel .control-dots .dot:hover {
   background-color: #6a2978 !important;

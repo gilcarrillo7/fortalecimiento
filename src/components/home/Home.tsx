@@ -1,0 +1,74 @@
+import * as React from "react";
+import { navigate } from "gatsby";
+import { useInView } from "react-intersection-observer";
+
+import Button from "../../components/shared/Button";
+import Page from "../../components/layout/Page";
+import MarkedText from "../shared/MarkedText";
+
+import Image from "../../images/home.png";
+import ImageText1 from "../../images/homeText1.svg";
+import ImageText2 from "../../images/homeText2.svg";
+import Arrow from "../../images/homeArrow.svg";
+
+const Home = () => {
+  const { ref, inView } = useInView({ threshold: 0.3, triggerOnce: true });
+  return (
+    <Page>
+      <img
+        ref={ref}
+        src={ImageText1}
+        className={`absolute left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2 -z-10 -mt-[120px] hidden sm:block transition-all duration-700 ${
+          inView ? "opacity-100 -ml-[180px]" : "opacity-0 -ml-[100px]"
+        }`}
+        alt="home"
+      />
+      <img
+        src={ImageText2}
+        className={`absolute right-0 sm:-mt-20 sm:top-1/2 sm:-translate-y-1/2 transition-all duration-1000 ${
+          inView ? "opacity-100" : "opacity-0"
+        }`}
+        alt="home"
+      />
+      <div className="relative flex flex-col sm:items-center text-center">
+        <div className={`relative z-0 mb-12`}>
+          <div
+            className={`absolute -z-10 w-[352px] h-[352px] -left-[18px] -top-[18px] bg-secundary transition-all duration-1000 ${
+              inView ? "opacity-100" : "opacity-0"
+            }`}
+          ></div>
+          <img
+            src={Image}
+            className={`z-10 transition-all delay-500 duration-1000 ${
+              inView ? "opacity-100" : "opacity-0"
+            }`}
+            alt="home"
+          />
+          <img
+            src={Arrow}
+            className={`z-10 absolute transition-all delay-1000 duration-700 ${
+              inView ? "opacity-100 right-0 sm:-right-24 -top-12" : "opacity-0 right-0 top-0"
+            }`}
+            alt="home"
+          />
+        </div>
+        <p className="text-2xl sm:text-3xl">
+          Fortalecemos capacidades.
+          <br />
+          <MarkedText className="text-primary font-bold">
+            Acompañamos personas.
+          </MarkedText>
+        </p>
+        <Button
+          variant="white"
+          className="mt-8"
+          onClick={() => navigate("/quienes_somos")}
+        >
+          Conoce más
+        </Button>
+      </div>
+    </Page>
+  );
+};
+
+export default Home;
