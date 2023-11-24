@@ -26,14 +26,13 @@ const Section5 = () => {
         />
         <div className="">
           <p className="text-xl sm:text-3xl text-primary text-light md:w-2/3 lg:w-1/2">
-            Entendemos al fortalecimiento como un proceso{" "}
             <MarkedText>
-              por el cual se generan y/o robustecen capacidades institucionales
-              de gestión, análisis, sistematización y evaluación de los
-              procedimientos, políticas, planes y programas de las OSC, al mismo
-              tiempo que se acompaña y capacita a las personas que integran las
-              organizaciones para que desarrollen y fortalezcan sus habilidades
-              profesionales.
+              Entendemos al <span className="font-bold">fortalecimiento</span> como un proceso por el cual se
+              generan y/o robustecen capacidades institucionales de gestión,
+              análisis, sistematización y evaluación de los procedimientos,
+              políticas, planes y programas de las OSC, al mismo tiempo que se
+              acompaña y capacita a las personas que integran las organizaciones
+              para que desarrollen y fortalezcan sus habilidades profesionales.
             </MarkedText>
           </p>
         </div>

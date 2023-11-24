@@ -16,7 +16,6 @@ const Home = () => {
   return (
     <Page>
       <img
-        ref={ref}
         src={ImageText1}
         className={`absolute left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2 -z-10 -mt-[120px] hidden sm:block transition-all duration-700 ${
           inView ? "opacity-100 -ml-[180px]" : "opacity-0 -ml-[100px]"
@@ -47,12 +46,14 @@ const Home = () => {
           <img
             src={Arrow}
             className={`z-10 absolute transition-all delay-1000 duration-700 ${
-              inView ? "opacity-100 right-0 sm:-right-24 -top-12" : "opacity-0 right-0 top-0"
+              inView
+                ? "opacity-100 right-0 sm:-right-24 -top-12"
+                : "opacity-0 right-0 top-0"
             }`}
             alt="home"
           />
         </div>
-        <p className="text-2xl sm:text-3xl">
+        <p ref={ref} className="text-2xl sm:text-3xl">
           Fortalecemos capacidades.
           <br />
           <MarkedText className="text-primary font-bold">

@@ -4,10 +4,11 @@ import { useInView } from "react-intersection-observer";
 import Page from "../layout/Page";
 import MarkedText from "../shared/MarkedText";
 import Button from "../shared/Button";
-import ImageBg1 from "../../images/homeBg1.svg";
-import ImageBg2 from "../../images/homeBg2.svg";
-import ImageBg3 from "../../images/homeBg3.svg";
-import ImageBg4 from "../../images/homeBg4.svg";
+import ImageBg1 from "../../images/homeBg1.png";
+import ImageBg2 from "../../images/homeBg2.png";
+import ImageBg3 from "../../images/homeBg3.png";
+import ImageBg4 from "../../images/homeBg4.png";
+import { navigate } from "gatsby";
 
 const Circle = ({ img = "", index }: { img?: string; index: number }) => {
   const { ref, inView } = useInView({ threshold: 0.3, triggerOnce: true });
@@ -106,7 +107,9 @@ const Section2 = () => {
             </p>
           </div>
           <div className="mb-12 md:mb-0">
-            <Button variant="white">Nuestra oferta</Button>
+            <Button variant="white" onClick={() => navigate("/nuestra_oferta")}>
+              Nuestra oferta
+            </Button>
           </div>
         </div>
       </div>

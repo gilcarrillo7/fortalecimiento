@@ -197,12 +197,12 @@ const QuienesSomos: React.FC<PageProps> = () => {
                 className="w-20 sm:w-auto mx-auto"
                 alt="textura"
               />
-              <p className="text-primary text-xl sm:text-2xl text-center mt-8">
+              <p className="text-primary text-xl sm:text-2xl text-center sm:mt-8">
                 Informes anuales
               </p>
             </div>
             <div className="flex-grow flex items-center">
-              <p className="font-semibold mt-4 text-sm sm:text-base">
+              <p className="font-semibold mt-2 sm:mt-4 text-sm sm:text-base">
                 Conoce más sobre los alcances del Centro para el Fortalecimiento
                 de la Sociedad Civil a través de nuestros informes anuales.
               </p>

@@ -14,7 +14,7 @@ const Fortalecimiento = () => {
         <div className="sm:order-3 w-full sm:w-1/2">
           <img
             ref={ref}
-            className={`transition-all duration-1000 delay-100 ${
+            className={`mt-16 sm:mt-0 transition-all duration-1000 delay-100 ${
               inView ? "opacity-100" : "opacity-0 translate-x-32"
             }`}
             src={Triangle}
