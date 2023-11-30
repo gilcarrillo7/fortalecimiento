@@ -21,6 +21,7 @@ module.exports = {
         secundary: "#FFE66E",
         complementary: "#BCA6F4",
         gray: "#686868",
+        lightpurple: "#9676b4",
       },
     },
   },

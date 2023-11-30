@@ -174,7 +174,7 @@ const Articulos: React.FC<PageProps> = () => {
   const max = useMemo(() => page * itemsPerPage, [page]);
 
   return (
-    <Layout>
+    <Layout headerComplementary>
       <Page className="text-2xl sm:text-3xl">
         <h1 className="text-center mt-36">
           Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
@@ -196,7 +196,7 @@ const Articulos: React.FC<PageProps> = () => {
                   image={art.image}
                   title={art.title}
                   description={art.description}
-                  link={art.link}
+                  link={"/articulos/articulo"}
                 />
               )
           )}

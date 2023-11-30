@@ -6,12 +6,16 @@ import Footer from "./Footer";
 interface IProps {
   children: boolean | React.ReactPortal | React.ReactNode;
   headerPrimary?: boolean;
+  headerComplementary?: boolean;
 }
 
-const Layout = ({ headerPrimary, children }: IProps) => {
+const Layout = ({ headerPrimary, headerComplementary, children }: IProps) => {
   return (
     <>
-      <Header headerPrimary={headerPrimary} />
+      <Header
+        headerPrimary={headerPrimary}
+        headerComplementary={headerComplementary}
+      />
       <motion.main
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
