@@ -1,12 +1,22 @@
 import React from "react";
+import { useInView } from "react-intersection-observer";
 import Layout from "../../components/layout/Layout";
 import { HeadFC, Link, PageProps } from "gatsby";
 import Image1 from "../../images/articles/image1.svg";
 
 const Articulo: React.FC<PageProps> = () => {
+  const { ref: refCircle, inView: inViewCircle } = useInView({
+    threshold: 0.3,
+    triggerOnce: true,
+  });
   return (
     <Layout headerComplementary>
-      <div className="hidden sm:block w-40 h-40 bg-primary rounded-full absolute top-[95px] right-0"></div>
+      <div
+        ref={refCircle}
+        className={`hidden sm:block w-40 h-40 bg-primary rounded-full absolute top-[95px] right-0  transition-all duration-1000 ${
+          inViewCircle ? "opacity-100" : "opacity-0 right-24"
+        }`}
+      ></div>
       <div className="container">
         <div className="sm:w-2/3 sm:mx-auto">
           <h1 className="text-3xl sm:text-4xl mt-32 sm:mt-64 text-primary font-bold mb-0">
