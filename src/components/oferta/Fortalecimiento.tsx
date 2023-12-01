@@ -5,6 +5,8 @@ import MarkedText from "../shared/MarkedText";
 import Button from "../shared/Button";
 import Triangle from "../../images/oferta/triangle.svg";
 
+import File1 from "../../assets/MEMBRESIA.pdf";
+
 const Fortalecimiento = () => {
   const { ref, inView } = useInView({ threshold: 0.3, triggerOnce: true });
 
@@ -37,7 +39,11 @@ const Fortalecimiento = () => {
           </p>
           <p className="mb-12">Conoce más sobre nuestra metodología.</p>
           <div className="text-center sm:text-left">
-            <Button variant="white" className="">
+            <Button
+              variant="white"
+              className=""
+              onClick={() => window.open(File1)}
+            >
               Descárgalo aquí
             </Button>
           </div>

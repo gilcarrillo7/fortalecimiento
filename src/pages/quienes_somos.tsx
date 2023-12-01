@@ -10,7 +10,6 @@ import Textura1 from "../images/quienes/textura1.svg";
 import Preview from "../images/quienes/preview.svg";
 import PlayIcon from "../images/quienes/playIcon.svg";
 import Half from "../images/quienes/half.svg";
-import Video from "../images/quienes/video.gif";
 import Ico1 from "../images/quienes/ico_1.svg";
 import Ico2 from "../images/quienes/ico_2.svg";
 import Ico3 from "../images/quienes/ico_3.svg";

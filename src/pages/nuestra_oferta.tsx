@@ -13,6 +13,8 @@ import Logo1 from "../images/oferta/logo1.svg";
 import Logo2 from "../images/oferta/logo2.svg";
 import Fortalecimiento from "../components/oferta/Fortalecimiento";
 
+import File2 from "../assets/METODOLOGIA_CFOSC_FINAL.pdf";
+
 const Oferta: React.FC<PageProps> = () => {
   const { ref, inView } = useInView({ threshold: 0.3, triggerOnce: true });
   return (
@@ -53,7 +55,11 @@ const Oferta: React.FC<PageProps> = () => {
               opciones de membresía.
             </p>
             <div className="text-center sm:text-left">
-              <Button variant="white" className="mt-4">
+              <Button
+                variant="white"
+                className="mt-4"
+                onClick={() => window.open(File2)}
+              >
                 Descárgalo aquí
               </Button>
             </div>
