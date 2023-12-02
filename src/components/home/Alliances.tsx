@@ -149,7 +149,7 @@ const Alliances = () => {
           </div>
         </div>
         <div className="pb-12">
-          <div className="grid grid-cols-5 gap-8 items-center">
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-8 items-center">
             <img src={ImgNac0} alt="" className="px-8 sm:px-4 lg:px-8" />
             <img src={ImgNac1} alt="" className="px-8 sm:px-4 lg:px-8" />
             <img src={ImgNac2} alt="" className="px-8 sm:px-4 lg:px-8" />
@@ -181,7 +181,7 @@ const Alliances = () => {
           </div>
         </div>
         <div className="pb-12">
-          <div className="grid grid-cols-5 gap-8 items-center">
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-8 items-center">
             <img src={ImgInt1} alt="" className="px-8 sm:px-4 lg:px-8" />
             <img src={ImgInt2} alt="" className="px-8 sm:px-4 lg:px-8" />
             <img src={ImgInt3} alt="" className="px-8 sm:px-4 lg:px-8" />
@@ -196,7 +196,7 @@ const Alliances = () => {
           </div>
         </div>
         <div className="pb-12">
-          <div className="grid grid-cols-5 gap-8 items-center">
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-8 items-center">
             <img src={ImgCer1} alt="" className="px-8 sm:px-4 lg:px-8" />
             <img src={ImgCer2} alt="" className="px-8 sm:px-4 lg:px-8" />
             <img src={ImgCer3} alt="" className="px-8 sm:px-4 lg:px-8" />
@@ -207,7 +207,7 @@ const Alliances = () => {
           </div>
         </div>
         <div className="pb-12">
-          <div className="grid grid-cols-5 gap-8 items-center">
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-8 items-center">
             <img src={ImgCop1} alt="" className="px-8 sm:px-4 lg:px-8" />
             <img src={ImgCop2} alt="" className="px-8 sm:px-4 lg:px-8" />
             <img src={ImgCop3} alt="" className="px-8 sm:px-4 lg:px-8" />
