@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import React, { useMemo, useState, useEffect } from "react";
 import Layout from "../components/layout/Layout";
 import { HeadFC, PageProps } from "gatsby";
 import Page from "../components/layout/Page";
@@ -6,6 +6,8 @@ import Image1 from "../images/articles/image1.svg";
 import Image2 from "../images/articles/image2.svg";
 import Image3 from "../images/articles/image3.svg";
 import Article from "../components/home/Article";
+import { useAppDispatch } from "../hooks";
+import { fetchArticles } from "../features/api/apiSlice";
 
 const Articulos: React.FC<PageProps> = () => {
   const arts = [
@@ -159,6 +161,7 @@ const Articulos: React.FC<PageProps> = () => {
   ];
 
   const itemsPerPage = 12;
+  const dispatch = useAppDispatch();
 
   const total = useMemo(() => arts.length, [arts]);
   const pages = useMemo(
@@ -172,6 +175,10 @@ const Articulos: React.FC<PageProps> = () => {
   const [page, setPage] = useState(1);
   const min = useMemo(() => (page - 1) * itemsPerPage + 1, [page]);
   const max = useMemo(() => page * itemsPerPage, [page]);
+
+  useEffect(() => {
+    dispatch(fetchArticles());
+  }, []);
 
   return (
     <Layout headerComplementary>
