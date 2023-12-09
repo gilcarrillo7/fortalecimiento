@@ -1,4 +1,7 @@
 export default interface AcfArticle {
+  id?: number;
+  next?: number;
+  date?: Date;
   order: number;
   title: string;
   image: number;

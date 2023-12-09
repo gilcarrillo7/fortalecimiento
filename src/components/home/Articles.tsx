@@ -6,8 +6,13 @@ import Image2 from "../../images/articles/image2.svg";
 import Image3 from "../../images/articles/image3.svg";
 import Article from "./Article";
 import { Link } from "gatsby";
+import { useAppDispatch, useAppSelector } from "../../hooks";
+import { fetchArticles, selectArticles } from "../../features/api/apiSlice";
+import { useEffect } from "react";
 
 const Articles = () => {
+  const articles = useAppSelector(selectArticles);
+  const dispatch = useAppDispatch();
   const arts = [
     {
       image: Image1,
@@ -31,6 +36,11 @@ const Articles = () => {
       link: "/c",
     },
   ];
+
+  useEffect(() => {
+    dispatch(fetchArticles());
+  }, []);
+
   return (
     <Page className="bg-secundary py-12">
       <h1
@@ -38,14 +48,15 @@ const Articles = () => {
       >
         Artículos
       </h1>
-      <div className="flex flex-col sm:flex-row mb-12 gap-6 sm:gap-20 lg:gap-40">
-        {arts.map((art, i) => (
+      <div className="grid sm:grid-cols-3 mb-12 gap-6 lg:gap-32">
+        {articles.slice(0, 3).map((art, i) => (
           <Article
-            key={`art${i}${art.link}`}
+            key={`art${i}${art.title}`}
             image={art.image}
             title={art.title}
-            description={art.description}
-            link={art.link}
+            description={art.preview}
+            link={`/articulos/articulo?id=${art.id}`}
+            linkText={art.preview_link}
           />
         ))}
       </div>

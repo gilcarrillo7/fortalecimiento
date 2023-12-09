@@ -1,6 +1,6 @@
 import * as React from "react";
 import { useInView } from "react-intersection-observer";
-import Imagen from "../../images/section3.svg";
+import Imagen from "../../images/section3.jpg";
 import Textura from "../../images/section3Textura.svg";
 import ImagenIcon from "../../images/section3Img.svg";
 

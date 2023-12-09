@@ -28,7 +28,16 @@ export const apiSlice = createSlice({
       state.articles = [];
     });
     builder.addCase(fetchArticles.fulfilled, (state, { payload }) => {
-      state.articles = payload.map((post) => post.acf);
+      const arts = payload
+        .map((post) => ({ id: post.id, date: post.date, ...post.acf }))
+        .sort((a, b) => a.order - b.order);
+      for (let i = 0; i < arts.length; i++) {
+        arts[i] = {
+          ...arts[i],
+          next: arts[i + 1 < arts.length ? i + 1 : 0].id,
+        };
+      }
+      state.articles = arts;
       state.loading = true;
     });
     builder.addCase(fetchArticles.rejected, (state, { payload }) => {
@@ -53,5 +62,7 @@ export const fetchArticles = createAsyncThunk<
 
 // Other code such as selectors can use the imported `RootState` type
 export const selectArticles = (state: RootState) => state.api.articles;
+export const selectArticle = (state: RootState, id: number) =>
+  state.api.articles.find((art) => art.id === id);
 
 export default apiSlice.reducer;

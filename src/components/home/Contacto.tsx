@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import Image from "../../images/contacto.svg";
+import Image from "../../images/contacto.png";
 import Textura from "../../images/contactoTextura.svg";
 import Button from "../shared/Button";
 
@@ -12,7 +12,7 @@ const Contacto = () => {
       <div className="bg-primary w-full h-[800px] md:h-48"></div>
       <img
         src={Image}
-        className="absolute left-1/2 -translate-x-1/2 top-12 md:top-24 z-0"
+        className="absolute left-1/2 -translate-x-1/2 top-12 md:top-24 z-0 w-full sm:w-[477px]"
         alt="contacto"
       />
       <div className="absolute top-72 md:top-96 left-1/2 -translate-x-1/2 text-center bg-white py-12 px-4 md:px-16 xl:px-24 mx-auto w-[calc(100%-2rem)] lg:w-[992px]">

@@ -131,7 +131,7 @@ const QuienesSomos: React.FC<PageProps> = () => {
                     width="100%"
                     height="100%"
                     controls
-                    url={`https://vimeo.com/843836810`}
+                    url={`https://www.youtube.com/watch?v=hruGWU3IINI`}
                     playing={true}
                   ></ReactPlayer>
                 </div>

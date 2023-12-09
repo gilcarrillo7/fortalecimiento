@@ -2,7 +2,7 @@ import * as React from "react";
 import { Carousel } from "react-responsive-carousel";
 import Page from "../layout/Page";
 
-import Header from "../../images/alliances.svg";
+import Header from "../../images/alliances.jpg";
 import Textura from "../../images/alliancesText.svg";
 
 import Img1 from "../../images/alliances/locales/01.png";
@@ -189,7 +189,6 @@ const Alliances = () => {
             <img src={ImgInt5} alt="" className="px-8 sm:px-4 lg:px-8" />
             <img src={ImgInt6} alt="" className="px-8 sm:px-4 lg:px-8" />
             <img src={ImgInt7} alt="" className="px-8 sm:px-4 lg:px-8" />
-            <img src={ImgInt8} alt="" className="px-8 sm:px-4 lg:px-8" />
           </div>
           <div className="text-primary font-semibold pt-8 pb-12 absolute bottom-8 -translate-x-1/2 left-1/2">
             Alianzas internacionales

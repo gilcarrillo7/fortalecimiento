@@ -5,7 +5,7 @@ import MarkedText from "../shared/MarkedText";
 import Button from "../shared/Button";
 import Triangle from "../../images/oferta/triangle.svg";
 
-import File1 from "../../assets/MEMBRESIA.pdf";
+import File1 from "../../assets/METODOLOGIA_CFOSC_FINAL.pdf";
 
 const Fortalecimiento = () => {
   const { ref, inView } = useInView({ threshold: 0.3, triggerOnce: true });

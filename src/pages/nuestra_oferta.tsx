@@ -13,7 +13,7 @@ import Logo1 from "../images/oferta/logo1.svg";
 import Logo2 from "../images/oferta/logo2.svg";
 import Fortalecimiento from "../components/oferta/Fortalecimiento";
 
-import File2 from "../assets/METODOLOGIA_CFOSC_FINAL.pdf";
+import File2 from "../assets/MEMBRESIA.pdf";
 
 const Oferta: React.FC<PageProps> = () => {
   const { ref, inView } = useInView({ threshold: 0.3, triggerOnce: true });

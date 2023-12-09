@@ -6,7 +6,7 @@ import Button from "../../components/shared/Button";
 import Page from "../../components/layout/Page";
 import MarkedText from "../shared/MarkedText";
 
-import Image from "../../images/home.png";
+import Image from "../../images/home.jpg";
 import ImageText1 from "../../images/homeText1.svg";
 import ImageText2 from "../../images/homeText2.svg";
 import Arrow from "../../images/homeArrow.svg";
@@ -38,7 +38,7 @@ const Home = () => {
           ></div>
           <img
             src={Image}
-            className={`z-10 transition-all delay-500 duration-1000 ${
+            className={`w-[315px] z-10 transition-all delay-500 duration-1000 ${
               inView ? "opacity-100" : "opacity-0"
             }`}
             alt="home"
