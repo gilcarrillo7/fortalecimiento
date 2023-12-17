@@ -8,10 +8,12 @@ import Twitter from "../../images/articles/x.svg";
 import Fb from "../../images/articles/fb.svg";
 import Textura from "../../images/articles/textura.svg";
 import { useAppDispatch, useAppSelector } from "../../hooks";
-import { fetchArticles, selectArticle } from "../../features/api/apiSlice";
+import { fetchPosts, selectArticle } from "../../features/api/apiSlice";
 import Loader from "../../components/shared/Loader";
 import ImageApi from "../../components/shared/ImageApi";
 import { SEO } from "../../components/layout/SEO";
+import { PostEnum } from "../../types/Enums";
+import { ARTICLE } from "../../constants";
 
 const Articulo: React.FC<PageProps> = ({ location }) => {
   const id = Number(location.search.split("=")[1]);
@@ -27,7 +29,7 @@ const Articulo: React.FC<PageProps> = ({ location }) => {
   });
 
   useEffect(() => {
-    dispatch(fetchArticles());
+    dispatch(fetchPosts({ post: PostEnum.ARTICLES, id: ARTICLE }));
   }, [id]);
 
   return (

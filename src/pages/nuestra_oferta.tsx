@@ -1,7 +1,7 @@
 import * as React from "react";
 import { useInView } from "react-intersection-observer";
 import Layout from "../components/layout/Layout";
-import { HeadFC, PageProps, Script, navigate, withPrefix } from "gatsby";
+import { HeadFC, PageProps, Script, navigate } from "gatsby";
 import { useAppDispatch, useAppSelector } from "../hooks";
 import Page from "../components/layout/Page";
 import Button from "../components/shared/Button";
@@ -11,20 +11,21 @@ import Textura2 from "../images/oferta/textura2.svg";
 
 import { SEO } from "../components/layout/SEO";
 import { fetchPage, selectPage } from "../features/api/apiSlice";
-import { OFERTA } from "../constants";
 import { useEffect } from "react";
 import { PagesEnum } from "../types/Enums";
 import Loader from "../components/shared/Loader";
 import ImageApi from "../components/shared/ImageApi";
-import { Helmet } from "react-helmet";
+import { AcfOferta } from "../types";
 
 const Oferta: React.FC<PageProps> = () => {
   const { ref, inView } = useInView({ threshold: 0.3, triggerOnce: true });
   const dispatch = useAppDispatch();
-  const page = useAppSelector((state) => selectPage(state, PagesEnum.OFERTA));
+  const page = useAppSelector((state) =>
+    selectPage(state, PagesEnum.OFERTA)
+  ) as AcfOferta;
 
   useEffect(() => {
-    dispatch(fetchPage({ page: PagesEnum.OFERTA, id: OFERTA }));
+    dispatch(fetchPage({ page: PagesEnum.OFERTA, slug: PagesEnum.OFERTA }));
   }, []);
 
   return (

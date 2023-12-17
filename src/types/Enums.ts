@@ -1,3 +1,8 @@
 export enum PagesEnum {
-  OFERTA = "oferta",
+  OFERTA = "nuestra_oferta",
+  QUIENES = "quienes_somos",
+}
+export enum PostEnum {
+  ARTICLES = "articles",
+  TIMELINE = "timeline",
 }

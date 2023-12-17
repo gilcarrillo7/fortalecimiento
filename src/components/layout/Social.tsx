@@ -4,8 +4,11 @@ import SocialIcon from "../shared/SocialIcon";
 const Social = () => {
   const social = [
     { name: "linkedin", url: "" },
-    { name: "instagram", url: "" },
-    { name: "facebook", url: "" },
+    { name: "instagram", url: "https://www.instagram.com/cfosc_/" },
+    {
+      name: "facebook",
+      url: "https://www.facebook.com/centrofortalecimiento/",
+    },
   ];
   return (
     <div className="flex space-between gap-3">

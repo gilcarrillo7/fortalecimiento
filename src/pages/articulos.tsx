@@ -4,23 +4,26 @@ import { HeadFC, PageProps } from "gatsby";
 import Page from "../components/layout/Page";
 import Article from "../components/home/Article";
 import { useAppDispatch, useAppSelector } from "../hooks";
-import { fetchArticles, selectArticles } from "../features/api/apiSlice";
+import { fetchPosts, selectPosts } from "../features/api/apiSlice";
 import Loader from "../components/shared/Loader";
 import { SEO } from "../components/layout/SEO";
+import { PostEnum } from "../types/Enums";
+import { ARTICLE } from "../constants";
+import { AcfArticle } from "../types";
 
 const Articulos: React.FC<PageProps> = () => {
-  const articles = useAppSelector(selectArticles);
+  const articles = useAppSelector((state) =>
+    selectPosts(state, PostEnum.ARTICLES)
+  ) as AcfArticle[];
 
   const itemsPerPage = 12;
   const dispatch = useAppDispatch();
 
-  const total = useMemo(() => articles.length, [articles]);
+  const total = useMemo(() => (articles ? articles.length : 0), [articles]);
   const pages = useMemo(
     () =>
-      Array.from(
-        Array(Math.ceil(articles.length / itemsPerPage) + 1).keys()
-      ).slice(1),
-    [articles, itemsPerPage]
+      Array.from(Array(Math.ceil(total / itemsPerPage) + 1).keys()).slice(1),
+    [articles, itemsPerPage, total]
   );
 
   const [page, setPage] = useState(1);
@@ -28,12 +31,12 @@ const Articulos: React.FC<PageProps> = () => {
   const max = useMemo(() => page * itemsPerPage, [page]);
 
   useEffect(() => {
-    dispatch(fetchArticles());
+    dispatch(fetchPosts({ post: PostEnum.ARTICLES, id: ARTICLE }));
   }, []);
 
   return (
     <Layout headerComplementary>
-      {articles.length ? (
+      {articles?.length ? (
         <Page className="text-2xl sm:text-3xl">
           <h1 className="text-center mt-36">
             Conoce más sobre las actividades y logros que en conjunto celebramos
@@ -48,7 +51,7 @@ const Articulos: React.FC<PageProps> = () => {
                 i >= min - 1 &&
                 i < max && (
                   <Article
-                    key={`artindx${i}${art.title}`}
+                    key={`artindx${i}`}
                     image={art.image}
                     title={art.title}
                     description={art.preview}

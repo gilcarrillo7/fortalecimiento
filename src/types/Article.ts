@@ -1,4 +1,4 @@
-export default interface AcfArticle {
+export interface AcfArticle {
   id?: number;
   next?: number;
   date?: Date;
@@ -8,4 +8,10 @@ export default interface AcfArticle {
   content: string;
   preview: string;
   preview_link: string;
+}
+export interface AcfTimeline {
+  order: number;
+  year: string;
+  description: string;
+  image: number;
 }
