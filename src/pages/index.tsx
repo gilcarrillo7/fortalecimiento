@@ -1,5 +1,5 @@
 import * as React from "react";
-import { type HeadFC, type PageProps } from "gatsby";
+import { HeadFC, type PageProps, Script } from "gatsby";
 import Layout from "../components/layout/Layout";
 import { Section2, Section3, Section4, Section5 } from "../components/home";
 
@@ -8,10 +8,12 @@ import Alliances from "../components/home/Alliances";
 import Testimonies from "../components/home/Testimonies";
 import Contacto from "../components/home/Contacto";
 import Home from "../components/home/Home";
+import { SEO } from "../components/layout/SEO";
 
 const IndexPage: React.FC<PageProps> = () => {
   return (
     <Layout>
+      <Script>{`observeElements()`}</Script>
       <Home />
       <Section2 />
       <Section3 />
@@ -27,4 +29,4 @@ const IndexPage: React.FC<PageProps> = () => {
 
 export default IndexPage;
 
-export const Head: HeadFC = () => <title>Home</title>;
+export const Head: HeadFC = () => <SEO />;

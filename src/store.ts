@@ -1,11 +1,13 @@
 import { configureStore, ThunkAction, Action } from "@reduxjs/toolkit";
 import uiReducer from "./features/ui/uiSlice";
 import apiReducer from "./features/api/apiSlice";
+import contactReducer from "./features/api/contactSlice";
 
 export const store = configureStore({
   reducer: {
     ui: uiReducer,
     api: apiReducer,
+    contact: contactReducer,
   },
 });
 

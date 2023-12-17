@@ -6,6 +6,7 @@ import Article from "../components/home/Article";
 import { useAppDispatch, useAppSelector } from "../hooks";
 import { fetchArticles, selectArticles } from "../features/api/apiSlice";
 import Loader from "../components/shared/Loader";
+import { SEO } from "../components/layout/SEO";
 
 const Articulos: React.FC<PageProps> = () => {
   const articles = useAppSelector(selectArticles);
@@ -35,11 +36,8 @@ const Articulos: React.FC<PageProps> = () => {
       {articles.length ? (
         <Page className="text-2xl sm:text-3xl">
           <h1 className="text-center mt-36">
-            Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-            <br />
-            <span className="font-bold text-primary">
-              Aenean massa. Cum sociis natoque penatibu
-            </span>
+            Conoce más sobre las actividades y logros que en conjunto celebramos
+            con las organizaciones que acompañamos.
           </h1>
           <p className="font-bold text-primary mt-20">
             {itemsPerPage <= total ? itemsPerPage : total} artículos de {total}
@@ -92,4 +90,4 @@ const Articulos: React.FC<PageProps> = () => {
 
 export default Articulos;
 
-export const Head: HeadFC = () => <title>Artículos</title>;
+export const Head: HeadFC = () => <SEO />;

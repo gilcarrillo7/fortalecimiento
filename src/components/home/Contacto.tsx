@@ -1,10 +1,38 @@
-import * as React from "react";
+import React, { FormEvent, useState } from "react";
+import { DotLoader } from "react-spinners";
 
 import Image from "../../images/contacto.png";
 import Textura from "../../images/contactoTextura.svg";
 import Button from "../shared/Button";
+import {
+  selectSending,
+  selectSent,
+  sendContact,
+} from "../../features/api/contactSlice";
+import { useAppDispatch } from "../../hooks";
+import { useSelector } from "react-redux";
 
 const Contacto = () => {
+  const dispatch = useAppDispatch();
+  const sending = useSelector(selectSending);
+  const sent = useSelector(selectSent);
+
+  const [form, setForm] = useState({
+    name: "",
+    mail: "",
+    msg: "",
+  });
+
+  const handleForm = (e: FormEvent) => {
+    e.preventDefault();
+    console.log("HPO");
+    dispatch(sendContact(form));
+    console.log("HPO");
+  };
+  const handleChange = (e: FormEvent<HTMLInputElement>) => {
+    setForm({ ...form, [e.currentTarget.name]: e.currentTarget.value });
+  };
+
   return (
     <div id="contacto" className="relative">
       <div className="bg-primary w-[20px] h-[20px] sm:w-[32px] sm:h-[32px] rounded-full absolute left-8 sm:left-1/2 sm:-translate-x-1/2 top-8 sm:top-16 sm:-ml-48"></div>
@@ -20,18 +48,22 @@ const Contacto = () => {
           ¿Te interesa fortalecer a tu OSC?
         </p>
         <p className="text-primary text-xl sm:text-2xl">Contáctanos</p>
-        <form className="">
+        <form className="" onSubmit={handleForm}>
           <div className="w-full flex flex-col md:flex-row gap-4 md:gap-16 pb-4 md:pb-8">
             <div className="w-full md:w-1/2">
               <input
                 className="text-gray border-b border-primary w-full py-4 outline-none placeholder:text-gray"
                 placeholder="Nombre"
+                name="name"
+                onChange={handleChange}
               />
             </div>
             <div className="w-full md:w-1/2">
               <input
                 className="text-gray border-b border-primary w-full py-4 outline-none placeholder:text-gray"
                 placeholder="Email"
+                name="mail"
+                onChange={handleChange}
               />
             </div>
           </div>
@@ -40,12 +72,28 @@ const Contacto = () => {
               <input
                 className="text-gray border-b border-primary w-full py-4 outline-none placeholder:text-gray"
                 placeholder="Mensaje"
+                name="msg"
+                onChange={handleChange}
               />
             </div>
             <div className="w-full md:w-1/2 pt-4 md:pt-0">
-              <Button variant={"white"} className="md:float-left">
-                Enviar
-              </Button>
+              {sending ? (
+                <DotLoader color="#6A2978" size={30} />
+              ) : (
+                <>
+                  {sent ? (
+                    <p className="text-primary font-lg">Mensaje enviado</p>
+                  ) : (
+                    <Button
+                      variant={"white"}
+                      className="md:float-left"
+                      type="submit"
+                    >
+                      Enviar
+                    </Button>
+                  )}
+                </>
+              )}
             </div>
           </div>
         </form>

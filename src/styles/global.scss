@@ -19,3 +19,16 @@
 .carousel .control-dots .dot.selected {
   background-color: #ffe66e !important;
 }
+.markedtext.animate {
+  animation-name: anwidth;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+@keyframes anwidth {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}

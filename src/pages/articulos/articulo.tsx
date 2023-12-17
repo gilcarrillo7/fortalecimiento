@@ -11,6 +11,7 @@ import { useAppDispatch, useAppSelector } from "../../hooks";
 import { fetchArticles, selectArticle } from "../../features/api/apiSlice";
 import Loader from "../../components/shared/Loader";
 import ImageApi from "../../components/shared/ImageApi";
+import { SEO } from "../../components/layout/SEO";
 
 const Articulo: React.FC<PageProps> = ({ location }) => {
   const id = Number(location.search.split("=")[1]);
@@ -102,4 +103,4 @@ const Articulo: React.FC<PageProps> = ({ location }) => {
 
 export default Articulo;
 
-export const Head: HeadFC = () => <title>Artículos</title>;
+export const Head: HeadFC = () => <SEO />;

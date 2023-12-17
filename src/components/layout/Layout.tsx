@@ -2,6 +2,8 @@ import React from "react";
 import { motion } from "framer-motion";
 import Header from "./Header";
 import Footer from "./Footer";
+import { Helmet } from "react-helmet";
+import { withPrefix } from "gatsby";
 
 interface IProps {
   children: boolean | React.ReactPortal | React.ReactNode;
@@ -12,6 +14,9 @@ interface IProps {
 const Layout = ({ headerPrimary, headerComplementary, children }: IProps) => {
   return (
     <>
+      <Helmet>
+        <script src={withPrefix("global.js")} type="text/javascript" />
+      </Helmet>
       <Header
         headerPrimary={headerPrimary}
         headerComplementary={headerComplementary}

@@ -22,6 +22,7 @@ import IcoMapa from "../images/quienes/ico_mapa.svg";
 
 import File from "../assets/2022.pdf";
 import Consejo from "../components/quienes/Consejo";
+import { SEO } from "../components/layout/SEO";
 
 const Historia = ({ item, index }: { item: any; index: number }) => {
   const { ref, inView } = useInView({ threshold: 0.3, triggerOnce: true });
@@ -240,4 +241,4 @@ const QuienesSomos: React.FC<PageProps> = () => {
 
 export default QuienesSomos;
 
-export const Head: HeadFC = () => <title>Quiénes Somos</title>;
+export const Head: HeadFC = () => <SEO />;
