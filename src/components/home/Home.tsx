@@ -6,12 +6,22 @@ import Button from "../../components/shared/Button";
 import Page from "../../components/layout/Page";
 import MarkedText from "../shared/MarkedText";
 
-import Image from "../../images/home.jpg";
 import ImageText1 from "../../images/homeText1.svg";
 import ImageText2 from "../../images/homeText2.svg";
 import Arrow from "../../images/homeArrow.svg";
+import ImageApi from "../shared/ImageApi";
 
-const Home = () => {
+const Home = ({
+  image,
+  title,
+  btntext,
+  btnurl,
+}: {
+  image: number;
+  title: string;
+  btntext: string;
+  btnurl: string;
+}) => {
   const { ref, inView } = useInView({ threshold: 0.3, triggerOnce: true });
   return (
     <Page>
@@ -36,12 +46,12 @@ const Home = () => {
               inView ? "opacity-100" : "opacity-0"
             }`}
           ></div>
-          <img
-            src={Image}
+          <ImageApi
+            id={image}
+            alt={"home"}
             className={`w-[315px] z-10 transition-all delay-500 duration-1000 ${
               inView ? "opacity-100" : "opacity-0"
             }`}
-            alt="home"
           />
           <img
             src={Arrow}
@@ -54,18 +64,18 @@ const Home = () => {
           />
         </div>
         <p ref={ref} className="text-2xl sm:text-3xl">
-          Fortalecemos capacidades.
+          {title.split(".")[0]}.
           <br />
           <MarkedText className="text-primary font-bold">
-            Acompañamos personas.
+            {title.split(".")[1]}.
           </MarkedText>
         </p>
         <Button
           variant="white"
           className="mt-8"
-          onClick={() => navigate("/quienes_somos")}
+          onClick={() => navigate(btnurl !== "" ? btnurl : "/quienes_somos")}
         >
-          Conoce más
+          {btntext}
         </Button>
       </div>
     </Page>

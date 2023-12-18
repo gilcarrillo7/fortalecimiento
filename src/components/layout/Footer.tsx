@@ -14,7 +14,7 @@ const Footer = () => {
           <div className="py-4 flex flex-col sm:flex-row justify-between items-center text-sm sm:text-base">
             <p className="text-center sm:text-left my-4">
               © CEFOSC {new Date().getFullYear()}. Todos los derechos
-              reservados | Aviso de privacidad
+              reservados {/*| Aviso de privacidad*/}
             </p>
             <p className="text-center sm:text-right">
               Diseño y desarrollo web por{" "}

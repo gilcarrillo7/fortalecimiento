@@ -5,48 +5,25 @@ import { Carousel } from "react-responsive-carousel";
 import Textura from "../../images/testText.svg";
 
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { useAppDispatch, useAppSelector } from "../../hooks";
+import { PostEnum } from "../../types/Enums";
+import { fetchPosts, selectPosts } from "../../features/api/apiSlice";
+import { AcfTestimonie } from "../../types";
+import { useEffect } from "react";
+import { TESTIMONIES } from "../../constants";
+import Loader from "../shared/Loader";
 
-const Testimonies = () => {
+const Testimonies = ({ title }: { title: string }) => {
+  const testimonies = useAppSelector((state) =>
+    selectPosts(state, PostEnum.TESTIMONIES)
+  ) as AcfTestimonie[];
+  const dispatch = useAppDispatch();
   const { ref, inView } = useInView({ threshold: 0.3, triggerOnce: true });
 
-  const tests = [
-    {
-      description:
-        "La fusión del expertise de World Vision en materia de derechos de la niñez, junto con el expertise de CFOSC en temas de fortalecimiento es un match perfecto, un equilibrio para brindar más herramientas a los espacios que tienen una gran responsabilidad en cuanto al cuidado de la niñez.",
-      author: "Yetzul Aguilar",
-      role: "Oficial de Protección de la Niñez, World Vision México",
-    },
-    {
-      description:
-        "El CFOSC orientó nuestra planeación estratégica para clarificar la misión y determinar claramente los objetivos y los planes de trabajo. CFOSC es un gran aliado para todas las organizaciones civiles que requieren fortalecerse.",
-      author: "Luis Alberto Fitzmaurice",
-      role: "Presidente del Patronato, Cáritas Chihuahua",
-    },
-    {
-      description:
-        "El acompañamiento del CFOSC nos brindó las herramientas y metodologías para elaborar proyectos con altos estándares de calidad y confianza de nuestros donantes. Tienen una red muy amplia de especialistas, lo que nos posibilita tener un acercamiento a reconocidos consultores y talleristas.",
-      author: "Javier Arreola",
-      role: "Director operativo, Centro de Liderazgo y Desarrollo Humano",
-    },
-    {
-      description:
-        "El acompañamiento del CFOSC significó una renovación para la institución. Nos fortalecimos como equipo y como individuos, tenemos claridad en nuestro quehacer para responder a las necesidades hoy en día. Juntos hemos alcanzado otros niveles de fortalecimiento.",
-      author: "Pbro. Enrique Batista Arias",
-      role: "Director ejecutivo Pro Tarahumara, A.C.I.B.P",
-    },
-    {
-      description:
-        "El acompañamiento personalizado del CFOSC nos fortaleció en los aspectos legales y fiscales que debemos cumplir como donataria autorizada, además de profesionalizar nuestra gobernanza. El CFOSC orienta, apoya, encamina y lleva de la mano a las organizaciones para cumplir su misión.",
-      author: "Salvador Rasura",
-      role: "Presidente del consejo directivo Quinta Amigo, A.C.",
-    },
-    {
-      description:
-        "La Red de Discapacidad ha sido acompañada por el CFOSC en la Iniciativa por la Inclusión que nos ha permitido contar con asesores expertos y de talla internacional para ser punta de lanza y revolucionar el tema de la discapacidad.",
-      author: "Daniela Huereca",
-      role: "Consejera acompañante de FECHAC para la Red de Discapacidad",
-    },
-  ];
+  useEffect(() => {
+    dispatch(fetchPosts({ post: PostEnum.TESTIMONIES, id: TESTIMONIES }));
+  }, []);
+
   return (
     <div id="testimonios" ref={ref} className="bg-complementary">
       <div className="flex flex-col items-center container py-8 sm:py-16">
@@ -65,7 +42,7 @@ const Testimonies = () => {
                   inView ? "opacity-100" : "translate-y-24 opacity-0"
                 }`}
               >
-                Testimonios
+                {title}
               </h1>
               <div
                 className={`absolute -right-32 top-1/2 -translate-y-1/2 bg-secundary w-[81px] h-[81px] rounded-full hidden sm:block transition-all duration-1000 delay-100 ${
@@ -79,30 +56,34 @@ const Testimonies = () => {
               ></div>
             </div>
           </div>
-          <Carousel
-            showThumbs={false}
-            showArrows={false}
-            showStatus={false}
-            preventMovementUntilSwipeScrollTolerance={true}
-            swipeScrollTolerance={50}
-            className=""
-            autoPlay={true}
-            infiniteLoop={true}
-          >
-            {tests.map((test) => (
-              <div key={test.author} className="text-left">
-                <p className="text-xl sm:text-3xl font-light">
-                  {test.description}
-                </p>
-                <p className="mt-8 text-xl sm:text-3xl text-primary">
-                  {test.author}
-                </p>
-                <p className="font-bold pb-20 text-primary sm:text-lg">
-                  {test.role}
-                </p>
-              </div>
-            ))}
-          </Carousel>
+          {testimonies ? (
+            <Carousel
+              showThumbs={false}
+              showArrows={false}
+              showStatus={false}
+              preventMovementUntilSwipeScrollTolerance={true}
+              swipeScrollTolerance={50}
+              className=""
+              autoPlay={true}
+              infiniteLoop={true}
+            >
+              {testimonies.map((test) => (
+                <div key={test.person} className="text-left">
+                  <p className="text-xl sm:text-3xl font-light">
+                    {test.testimonio}
+                  </p>
+                  <p className="mt-8 text-xl sm:text-3xl text-primary">
+                    {test.person}
+                  </p>
+                  <p className="font-bold pb-20 text-primary sm:text-lg">
+                    {test.role}
+                  </p>
+                </div>
+              ))}
+            </Carousel>
+          ) : (
+            <Loader />
+          )}
         </div>
       </div>
     </div>

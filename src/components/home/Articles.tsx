@@ -9,11 +9,12 @@ import { useEffect } from "react";
 import { PostEnum } from "../../types/Enums";
 import { ARTICLE } from "../../constants";
 import Loader from "../shared/Loader";
+import { AcfArticle } from "../../types";
 
-const Articles = () => {
+const Articles = ({ title, link }: { title: string; link: string }) => {
   const articles = useAppSelector((state) =>
     selectPosts(state, PostEnum.ARTICLES)
-  );
+  ) as AcfArticle[];
   const dispatch = useAppDispatch();
 
   useEffect(() => {
@@ -27,7 +28,7 @@ const Articles = () => {
           <h1
             className={`text-primary text-3xl sm:text-5xl font-semibold text-center mb-12`}
           >
-            Artículos
+            {title}
           </h1>
           <div className="grid sm:grid-cols-3 mb-12 gap-6 lg:gap-32">
             {articles.slice(0, 3).map((art, i) => (
@@ -45,7 +46,7 @@ const Articles = () => {
             className="text-primary font-light text-2xl sm:text-3xl hover:underline"
             to="/articulos"
           >
-            Ver todos
+            {link}
           </Link>
         </Page>
       ) : (

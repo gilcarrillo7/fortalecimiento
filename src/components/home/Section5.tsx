@@ -13,7 +13,7 @@ const Circle = ({ className }: { className: string }) => {
   );
 };
 
-const Section5 = () => {
+const Section5 = ({ content }: { content: string }) => {
   const { ref, inView } = useInView({ threshold: 0.3, triggerOnce: true });
 
   return (
@@ -25,16 +25,10 @@ const Section5 = () => {
           alt=""
         />
         <div className="">
-          <p className="text-xl sm:text-3xl text-primary text-light md:w-2/3 lg:w-1/2">
-            <MarkedText>
-              Entendemos al <span className="font-bold">fortalecimiento</span> como un proceso por el cual se
-              generan y/o robustecen capacidades institucionales de gestión,
-              análisis, sistematización y evaluación de los procedimientos,
-              políticas, planes y programas de las OSC, al mismo tiempo que se
-              acompaña y capacita a las personas que integran las organizaciones
-              para que desarrollen y fortalezcan sus habilidades profesionales.
-            </MarkedText>
-          </p>
+          <p
+            className="text-xl sm:text-3xl text-primary text-light md:w-2/3 lg:w-1/2"
+            dangerouslySetInnerHTML={{ __html: content }}
+          />
         </div>
         <Circle
           className={`hidden md:block absolute left-1/2 md:left-3/4 -translate-x-1/2 top-64 transition-all duration-1000 ${

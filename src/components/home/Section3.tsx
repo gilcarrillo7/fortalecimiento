@@ -3,8 +3,9 @@ import { useInView } from "react-intersection-observer";
 import Imagen from "../../images/section3.jpg";
 import Textura from "../../images/section3Textura.svg";
 import ImagenIcon from "../../images/section3Img.svg";
+import ImageApi from "../shared/ImageApi";
 
-const Section3 = () => {
+const Section3 = ({ content, image }: { content: string; image: number }) => {
   const { ref, inView } = useInView({ threshold: 0.3, triggerOnce: true });
   return (
     <div className="" ref={ref}>
@@ -32,20 +33,16 @@ const Section3 = () => {
             className={`p-4 transition-all duration-1000 delay-700 ${
               inView ? "opacity-100" : "translate-x-24 opacity-0"
             }`}
-          >
-            <p className="text-3xl sm:text-4xl font-light mb-6 sm:max-w-[480px]">
-              “El verdadero poder es empoderar a alguien más”.
-            </p>
-            <p className="text-xl font-bold text-primary">Toni Morrison</p>
-          </div>
+            dangerouslySetInnerHTML={{ __html: content }}
+          />
         </div>
       </div>
-      <img
-        src={Imagen}
+      <ImageApi
+        id={image}
+        alt={""}
         className={`w-full transition-all duration-1000 delay-700 ${
           inView ? "opacity-100" : "translate-y-24 opacity-0"
         }`}
-        alt=""
       />
     </div>
   );

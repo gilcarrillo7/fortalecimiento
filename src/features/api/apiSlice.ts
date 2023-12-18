@@ -1,9 +1,12 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import type { RootState } from "../../store";
 import {
+  AcfAlianzas,
   AcfArticle,
+  AcfHome,
   AcfOferta,
   AcfQuienes,
+  AcfTestimonie,
   AcfTimeline,
   IPageResponse,
   IPostResponse,
@@ -16,12 +19,21 @@ interface ApiState {
   loading: boolean;
   error: string;
   pages: {
+    home: AcfHome | null;
     nuestra_oferta: AcfOferta | null;
     quienes_somos: AcfQuienes | null;
+    alianzas: {
+      locales: AcfAlianzas | null;
+      nacionales: AcfAlianzas | null;
+      internacionales: AcfAlianzas | null;
+      acreditaciones: AcfAlianzas | null;
+      cooperantes: AcfAlianzas | null;
+    };
   };
   posts: {
     articles: AcfArticle[] | null;
     timeline: AcfTimeline[] | null;
+    testimonies: AcfTestimonie[] | null;
   };
 }
 
@@ -30,12 +42,21 @@ const initialState: ApiState = {
   loading: false,
   error: "",
   pages: {
+    home: null,
     nuestra_oferta: null,
     quienes_somos: null,
+    alianzas: {
+      locales: null,
+      nacionales: null,
+      internacionales: null,
+      acreditaciones: null,
+      cooperantes: null,
+    },
   },
   posts: {
     articles: null,
     timeline: null,
+    testimonies: null,
   },
 };
 
@@ -73,8 +94,7 @@ export const apiSlice = createSlice({
           };
         }
         state.posts[post] = arts;
-      } else if (post === PostEnum.TIMELINE) {
-        console.log(data);
+      } else {
         state.posts[post] = data
           .map((post) => ({
             ...post.acf,
