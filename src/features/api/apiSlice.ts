@@ -137,7 +137,9 @@ export const fetchPosts = createAsyncThunk<
 
 // Other code such as selectors can use the imported `RootState` type
 export const selectArticle = (state: RootState, id: number) =>
-  state.api.posts.articles!.find((art) => art.id === id);
+  state.api.posts.articles
+    ? state.api.posts.articles.find((art) => art.id === id)
+    : null;
 export const selectPage = (state: RootState, page: PagesEnum) =>
   state.api.pages[page];
 export const selectPosts = (state: RootState, post: PostEnum) =>
