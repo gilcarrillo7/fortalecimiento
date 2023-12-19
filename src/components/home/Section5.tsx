@@ -3,7 +3,7 @@ import { useInView } from "react-intersection-observer";
 import Page from "../layout/Page";
 import Textura from "../../images/section5Textura.svg";
 import Textura2 from "../../images/section5Textura2.svg";
-import MarkedText from "../shared/MarkedText";
+import Button from "../shared/Button";
 
 const Circle = ({ className }: { className: string }) => {
   return (
@@ -13,7 +13,19 @@ const Circle = ({ className }: { className: string }) => {
   );
 };
 
-const Section5 = ({ content }: { content: string }) => {
+const Section5 = ({
+  content,
+  centro_button,
+  centro_url,
+  aula_button,
+  aula_url,
+}: {
+  content: string;
+  centro_button: string;
+  centro_url: string;
+  aula_button: string;
+  aula_url: string;
+}) => {
   const { ref, inView } = useInView({ threshold: 0.3, triggerOnce: true });
 
   return (
@@ -24,11 +36,27 @@ const Section5 = ({ content }: { content: string }) => {
           src={Textura}
           alt=""
         />
-        <div className="">
+        <div className=" md:w-2/3 lg:w-1/2">
           <p
-            className="text-xl sm:text-3xl text-primary text-light md:w-2/3 lg:w-1/2"
+            className="text-xl sm:text-3xl text-primary text-light"
             dangerouslySetInnerHTML={{ __html: content }}
           />
+          <div className="flex flex-col sm:flex-row gap-4 sm:gap-8 mt-6 p-0">
+            <Button
+              variant="white"
+              className="mx-0"
+              onClick={() => (location.href = centro_url)}
+            >
+              {centro_button}
+            </Button>
+            <Button
+              variant="primary"
+              className="mx-0"
+              onClick={() => (location.href = aula_url)}
+            >
+              {aula_button}
+            </Button>
+          </div>
         </div>
         <Circle
           className={`hidden md:block absolute left-1/2 md:left-3/4 -translate-x-1/2 top-64 transition-all duration-1000 ${

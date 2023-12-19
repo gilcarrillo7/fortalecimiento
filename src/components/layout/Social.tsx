@@ -3,7 +3,10 @@ import SocialIcon from "../shared/SocialIcon";
 
 const Social = () => {
   const social = [
-    { name: "linkedin", url: "" },
+    {
+      name: "linkedin",
+      url: "https://www.linkedin.com/company/centro-para-el-fortalecimiento-de-la-sociedad-civil/",
+    },
     { name: "instagram", url: "https://www.instagram.com/cfosc_/" },
     {
       name: "facebook",

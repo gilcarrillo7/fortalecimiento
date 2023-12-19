@@ -2,16 +2,16 @@ import * as React from "react";
 import { Carousel } from "react-responsive-carousel";
 import Page from "../layout/Page";
 
-import Header from "../../images/alliances.jpg";
 import Textura from "../../images/alliancesText.svg";
 
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { useAppDispatch, useAppSelector } from "../../hooks";
 import { fetchPage, selectPage } from "../../features/api/apiSlice";
 import { AcfAlianzas } from "../../types";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { PagesEnum } from "../../types/Enums";
 import ImageApi from "../shared/ImageApi";
+import { BASE_URL } from "../../constants";
 
 const Slide = ({ page }: { page: AcfAlianzas }) => {
   return (
@@ -200,7 +200,7 @@ const Slide = ({ page }: { page: AcfAlianzas }) => {
   );
 };
 
-const Alliances = ({ title, image }: { title: string; image: string }) => {
+const Alliances = ({ title, image }: { title: string; image: number }) => {
   const dispatch = useAppDispatch();
   const alLocales = useAppSelector((state) =>
     selectPage(state, PagesEnum.AL_LOCALES)
@@ -211,12 +211,8 @@ const Alliances = ({ title, image }: { title: string; image: string }) => {
   const alInternacionales = useAppSelector((state) =>
     selectPage(state, PagesEnum.AL_INTERNACIONALES)
   ) as AcfAlianzas;
-  const alCooperantes = useAppSelector((state) =>
-    selectPage(state, PagesEnum.AL_COOPERANTES)
-  ) as AcfAlianzas;
-  const alAcreditaciones = useAppSelector((state) =>
-    selectPage(state, PagesEnum.AL_ACREDITACIONES)
-  ) as AcfAlianzas;
+
+  const [style, setStyle] = useState({});
 
   useEffect(() => {
     dispatch(
@@ -234,26 +230,30 @@ const Alliances = ({ title, image }: { title: string; image: string }) => {
         slug: PagesEnum.AL_INTERNACIONALES,
       })
     );
-    dispatch(
-      fetchPage({
-        page: PagesEnum.AL_COOPERANTES,
-        slug: PagesEnum.AL_COOPERANTES,
-      })
-    );
-    dispatch(
-      fetchPage({
-        page: PagesEnum.AL_ACREDITACIONES,
-        slug: PagesEnum.AL_ACREDITACIONES,
-      })
-    );
   }, []);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await fetch(`${BASE_URL}/media/${image}`);
+      const data = await response.json();
+      return data;
+    };
+
+    if (image && image !== 0) {
+      fetchData()
+        .then((res) =>
+          setStyle({ backgroundImage: `url(${res.guid.rendered})` })
+        )
+        .catch(console.error);
+    }
+  }, [image]);
 
   return (
     <Page>
       <div
         id="alianzas"
-        className="w-full h-[174px] absolute left-0 top-0 xl:bg-[size:100%]"
-        style={{ backgroundImage: `url(${image})` }}
+        className="w-full h-[174px] absolute left-0 top-0 xl:bg-[size:100%] bg-[70%_15%]"
+        style={style}
       ></div>
       <img
         className={`absolute -top-36 md:top-0 -right-64 md:right-0`}
@@ -273,7 +273,7 @@ const Alliances = ({ title, image }: { title: string; image: string }) => {
         swipeScrollTolerance={50}
         className="mb-20 relative"
         infiniteLoop={true}
-        autoPlay={true}
+        autoPlay={false}
       >
         <div className="pb-12">{alLocales && <Slide page={alLocales} />}</div>
         <div className="pb-12">
@@ -281,12 +281,6 @@ const Alliances = ({ title, image }: { title: string; image: string }) => {
         </div>
         <div className="pb-12">
           {alInternacionales && <Slide page={alInternacionales} />}
-        </div>
-        <div className="pb-12">
-          {alAcreditaciones && <Slide page={alAcreditaciones} />}
-        </div>
-        <div className="pb-12">
-          {alCooperantes && <Slide page={alCooperantes} />}
         </div>
       </Carousel>
     </Page>

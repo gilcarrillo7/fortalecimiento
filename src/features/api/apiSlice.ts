@@ -86,7 +86,7 @@ export const apiSlice = createSlice({
       if (post === PostEnum.ARTICLES) {
         const arts: any[] = data
           .map((post) => ({ id: post.id, date: post.date, ...post.acf }))
-          .sort((a: any, b: any) => a.order - b.order);
+          .sort((a: any, b: any) => b.order - a.order);
         for (let i = 0; i < arts.length; i++) {
           arts[i] = {
             ...arts[i],

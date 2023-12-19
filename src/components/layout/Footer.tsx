@@ -13,7 +13,7 @@ const Footer = () => {
           </div>
           <div className="py-4 flex flex-col sm:flex-row justify-between items-center text-sm sm:text-base">
             <p className="text-center sm:text-left my-4">
-              © CEFOSC {new Date().getFullYear()}. Todos los derechos
+              © CFOSC {new Date().getFullYear()}. Todos los derechos
               reservados {/*| Aviso de privacidad*/}
             </p>
             <p className="text-center sm:text-right">

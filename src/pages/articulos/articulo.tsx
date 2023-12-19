@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 import Layout from "../../components/layout/Layout";
 import { HeadFC, Link, PageProps } from "gatsby";
-import Image1 from "../../images/articles/image1.svg";
+import { FacebookShareButton, TwitterShareButton } from "react-share";
 
 import Twitter from "../../images/articles/x.svg";
 import Fb from "../../images/articles/fb.svg";
@@ -70,8 +70,16 @@ const Articulo: React.FC<PageProps> = ({ location }) => {
                   Comparte esto:
                 </div>
                 <div className="flex my-8 gap-8">
-                  <img src={Fb} alt="Facebook" className="w-12" />
-                  <img src={Twitter} alt="Twitter" className="w-12" />
+                  <FacebookShareButton
+                    url={`https://fortalecimiento.org/articulos/articulo/?id=${id}`}
+                  >
+                    <img src={Fb} alt="Facebook" className="w-12" />
+                  </FacebookShareButton>
+                  <TwitterShareButton
+                    url={`https://fortalecimiento.org/articulos/articulo/?id=${id}`}
+                  >
+                    <img src={Twitter} alt="Twitter" className="w-12" />
+                  </TwitterShareButton>
                 </div>
                 <div className="text-primary flex justify-between text-xl sm:text-2xl my-12">
                   <Link

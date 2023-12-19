@@ -20,7 +20,7 @@ const Button = ({
 			{variant === "primary" && (
 				<button
 					type={type}
-					className={`${className} text-white font-normal py-2 px-8 bg-primary hover:bg-complementary hover:text-white w-full sm:w-auto mx-auto sm:min-w-[220px]`}
+					className={`${className} text-white font-normal py-2 px-8 bg-primary border hover:bg-complementary hover:text-white w-full sm:w-auto mx-auto sm:min-w-[220px]`}
 					onClick={onClick}
 				>
 					{children}

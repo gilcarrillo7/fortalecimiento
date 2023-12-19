@@ -109,4 +109,8 @@ export interface AcfHome {
   contacto_address: string;
   contacto_schedule: string;
   contacto_contacto: string;
+  centro_button: string;
+  centro_url: string;
+  aula_button: string;
+  aula_url: string;
 }

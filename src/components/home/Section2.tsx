@@ -4,12 +4,30 @@ import { useInView } from "react-intersection-observer";
 import Page from "../layout/Page";
 import Button from "../shared/Button";
 import { navigate } from "gatsby";
-import { useMemo } from "react";
+import { useEffect, useMemo, useState } from "react";
+import { BASE_URL } from "../../constants";
 
 const Circle = ({ img = 0, index }: { img?: number; index: number }) => {
   const { ref, inView } = useInView({ threshold: 0.3, triggerOnce: true });
-  const style = img !== 0 ? { backgroundImage: `url(${img})` } : {};
   const delay = `delay-[${index * 100}ms]`;
+
+  const [style, setStyle] = useState({});
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await fetch(`${BASE_URL}/media/${img}`);
+      const data = await response.json();
+      return data;
+    };
+
+    if (img && img !== 0) {
+      fetchData()
+        .then((res) =>
+          setStyle({ backgroundImage: `url(${res.guid.rendered})` })
+        )
+        .catch(console.error);
+    }
+  }, [img]);
 
   return (
     <div

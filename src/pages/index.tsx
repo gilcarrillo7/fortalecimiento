@@ -59,7 +59,13 @@ const IndexPage: React.FC<PageProps> = () => {
             image3={page.eje_image_3}
             text3={page.eje_text_3}
           />
-          <Section5 content={page.fortalecimiento_content} />
+          <Section5
+            content={page.fortalecimiento_content}
+            centro_button={page.centro_button}
+            centro_url={page.centro_url}
+            aula_button={page.aula_button}
+            aula_url={page.aula_url}
+          />
           <Articulos title={page.articulos_title} link={page.articulos_all} />
           <Alliances title={page.alianzas_title} image={page.alianzas_image} />
           <Testimonies title={page.testimonios_title} />
