@@ -57,7 +57,7 @@ const Historia = ({ item, index }: { item: AcfTimeline; index: number }) => {
         <ImageApi
           id={item.image}
           alt={""}
-          className={`md:absolute md:top-1/2 w-[100px] sm:w-[150px] ${
+          className={`md:absolute md:top-1/2 w-[100px] sm:w-[150px] min-w-[150px] max-h-[150px] ${
             index % 2 === 0
               ? "md:left-full ml-4 order-2"
               : "md:right-full mr-4 order-1"

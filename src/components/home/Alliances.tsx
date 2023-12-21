@@ -273,7 +273,7 @@ const Alliances = ({ title, image }: { title: string; image: number }) => {
         swipeScrollTolerance={50}
         className="mb-20 relative"
         infiniteLoop={true}
-        autoPlay={false}
+        autoPlay={true}
       >
         <div className="pb-12">{alLocales && <Slide page={alLocales} />}</div>
         <div className="pb-12">
