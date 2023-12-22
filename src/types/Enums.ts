@@ -7,6 +7,7 @@ export enum PagesEnum {
   AL_COOPERANTES = "alianzas_cooperantes",
   AL_ACREDITACIONES = "alianzas_acreditaciones",
   HOME = "home",
+  AVISO = "aviso_privacidad",
 }
 export enum PostEnum {
   ARTICLES = "articles",

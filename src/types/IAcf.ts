@@ -114,3 +114,8 @@ export interface AcfHome {
   aula_button: string;
   aula_url: string;
 }
+
+export interface AcfAviso {
+  title: string;
+  content: string;
+}

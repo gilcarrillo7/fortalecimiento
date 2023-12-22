@@ -44,7 +44,7 @@ const Section5 = ({
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-8 mt-6 p-0">
             <Button
               variant="white"
-              className="mx-0"
+              className="mx-0 !px-2"
               onClick={() => (location.href = centro_url)}
             >
               {centro_button}

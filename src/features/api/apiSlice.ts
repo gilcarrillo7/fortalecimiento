@@ -13,6 +13,7 @@ import {
 } from "../../types";
 import { BASE_URL } from "../../constants";
 import { PagesEnum, PostEnum } from "../../types/Enums";
+import { AcfAviso } from "../../types/IAcf";
 
 // Define a type for the slice state
 interface ApiState {
@@ -29,6 +30,7 @@ interface ApiState {
       acreditaciones: AcfAlianzas | null;
       cooperantes: AcfAlianzas | null;
     };
+    aviso_privacidad: AcfAviso | null;
   };
   posts: {
     articles: AcfArticle[] | null;
@@ -52,6 +54,7 @@ const initialState: ApiState = {
       acreditaciones: null,
       cooperantes: null,
     },
+    aviso_privacidad: null,
   },
   posts: {
     articles: null,
